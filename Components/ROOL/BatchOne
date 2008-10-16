@@ -55,16 +55,15 @@ URL             -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System
 WhoIs           -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Network.URL # RiscOS.Sources.Networking.Fetchers.WhoIs
 
 # Core modules
-ATAPI           -options INSTDIR=<Install$Dir>.HardDisc4.Modules.HWSupport  # RiscOS.Sources.HWSupport.CD.ATAPI
-BASIC105        -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Programmer # RiscOS.Sources.Programmer.BASIC
-CDFS            -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys    # RiscOS.Sources.FileSys.CDFS.CDFS
-CDFSDriver      -options INSTDIR=<Install$Dir>.HardDisc4.Modules.HWSupport  # RiscOS.Sources.HWSupport.CD.CDFSDriver
-CDFSFiler       -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys    # RiscOS.Sources.FileSys.CDFS.CDFSFiler
-Filer           -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Desktop    # RiscOS.Sources.Desktop.Filer
-MessageTrans    -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Internat   # RiscOS.Sources.Internat.MsgTrans
-Pinboard        -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Desktop    # RiscOS.Sources.Desktop.Pinboard
-RTSupport       -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Programmer # RiscOS.Sources.Programmer.RTSupport
-ScreenFX        -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Video      # RiscOS.Sources.Video.Render.ScreenFX
+ATAPI           -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core # RiscOS.Sources.HWSupport.CD.ATAPI
+BASIC105        -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core # RiscOS.Sources.Programmer.BASIC
+CDFS            -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core # RiscOS.Sources.FileSys.CDFS.CDFS
+CDFSDriver      -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core # RiscOS.Sources.HWSupport.CD.CDFSDriver
+CDFSFiler       -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core # RiscOS.Sources.FileSys.CDFS.CDFSFiler
+Filer           -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core # RiscOS.Sources.Desktop.Filer
+MessageTrans    -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core # RiscOS.Sources.Internat.MsgTrans
+Pinboard        -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core # RiscOS.Sources.Desktop.Pinboard
+RTSupport       -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core # RiscOS.Sources.Programmer.RTSupport
 
 # Debugging modules
 DebugButtn      -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Debug # RiscOS.Sources.Programmer.DebugButtn
@@ -76,6 +75,9 @@ TrapError       -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Debug # RiscOS.
 UnSqzAIF        -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Debug # RiscOS.Sources.HWSupport.UnSqzAIF
 WatchAbort      -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Debug # RiscOS.Sources.Programmer.WatchAbort
 WatchUserSWIs   -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Debug # RiscOS.Sources.Programmer.WatchUserSWIs
+
+# Miscellaneous modules                                                                                                      
+ScreenFX        -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Misc # RiscOS.Sources.Video.Render.ScreenFX
 
 # Miscellaneous utilities
 HForm           -options INSTDIR=<Install$Dir>.HardDisc4.Utilities # RiscOS.Sources.Utilities.HForm

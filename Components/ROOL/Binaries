@@ -1,0 +1,373 @@
+%BaseAddress   0x00000000
+%Image         Build$ImageName
+%Log           Build$ImageName
+%Messages      Sources.Internat.Messages
+%Joiner        BigSplit2
+%JoinerFormat  BigSplit
+%sigstr        Univ
+
+# Header files
+HdrSrc                  -options OPTIONS=ALL
+
+# We need the following exported for swis.h generation change the type to EXP
+DDEUtils                -type EXP
+Econet                  -type EXP
+DDT                     -type EXP
+HostFS                  -type EXP
+SCSIDriver              -type EXP
+SCSIFS                  -type EXP
+PCCardFS                -type EXP
+PDriver                 -type EXP
+PDumperDM               -type EXP
+MakePSFont              -type EXP
+USBDriver               -type EXP
+OHCIHeaders             -type EXP
+
+# Kernel is first module in ROM seen as the UtilityModule (requires HAL first)
+HAL_Tungsten
+Kernel                  -at 0xFC010000
+Podule                  -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+PCI                     -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+ResourceFS              -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys
+TerritoryManager        -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+UK                      -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+
+# Builds wrong target name?
+SharedRISC_OSLib        -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core TARGET=CLib
+
+TaskManager             -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Desktop
+ARM                     -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+BufferManager           -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+ColourTrans             -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Video
+DeviceFS                -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys
+DMAManager              -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+DrawMod                 -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Video
+BBCEconet               -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Network
+FilerSWIs               -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys
+Free                    -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys
+Hourglass               -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Video
+IIC                     -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+InternationalKeyboard   -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core KEYBOARD=All
+PipeFS                  -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys
+ScreenBlanker           -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Video
+
+# This doesn't have a RAM module install rule
+#ScrSaver                -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Video SCRSAVERAPP=No
+
+DualSerial              -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+
+SerialDeviceDriver      -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+SerialDeviceSupport     -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+SerialMouse             -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+ShellCLI                -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Desktop
+SoundDMA_Tungsten       -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Audio.Iyonix
+SoundControl            -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Audio
+
+# This ended up building the CFSIjpeg thing rather than a module
+#SpriteExtend            -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Video
+
+TaskWindow              -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Desktop
+
+# Some more libraries and bits
+callx                   -type EXP
+AsmUtils                -type EXP
+TCPIPheaders            -type EXP
+socklib                 -type EXP
+inetlib                 -type EXP
+unixlib                 -type EXP
+UnicodeLib              -type EXP
+OSLib                   -type EXP
+DeskLib                 -type EXP
+ModMallocLib            -type EXP
+PlainArgvLib            -type EXP
+RemoteDebug             -type EXP
+PDebug                  -type EXP
+DDTLib                  -type EXP
+Wild                    -type EXP
+Trace                   -type EXP
+DebugLib                -type EXP
+Portable                -type EXP
+NVRAM                   -type EXP
+PortManager             -type EXP
+
+# More libraries
+ConfigLib               -type EXP
+PRISMLib                -type EXP
+zlib                    -type EXP
+tboxlib                 -type EXP
+ToolboxLib              -type EXP
+HALLib                  -type EXP
+NSPRLib                 -type EXP
+JSLib                   -type EXP
+BrowseHTMLLib           -type EXP
+
+# Miscellaneous
+ImageLibPNG             -type EXP
+ImageLibJPEG            -type EXP
+ImageLib                -type EXP
+
+# Core modules
+International           -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+BASIC105                -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+BASIC64                 -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+BASICTrans              -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+MessageTrans            -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+RTSupport               -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+
+# Toolbox
+ColourDbox              -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Toolbox
+ColourMenu              -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Toolbox
+DCS_Quit                -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Toolbox
+FileDbox                -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Toolbox
+FileInfo                -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Toolbox
+FontDbox                -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Toolbox
+FontMenu                -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Toolbox
+IconBar                 -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Toolbox
+Gadgets                 -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Toolbox
+Menu                    -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Toolbox
+PrintDbox               -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Toolbox
+ProgInfo                -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Toolbox
+ResDisplay              -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Toolbox
+SaveAs                  -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Toolbox
+Scale                   -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Toolbox
+ToolAction              -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Toolbox
+Toolbox                 -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Toolbox
+Window                  -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Toolbox
+
+# !System modules
+DDEUtils                -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules
+FrontEnd                -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules
+AcornURI                -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Network
+CheckURL                -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Network
+Fetchers
+AcornHTTP               -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Network.URL
+FileFetcher             -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Network.URL
+Finger                  -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Network.URL
+FTP                     -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Network.URL
+Gopher                  -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Network.URL
+URL                     -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Network.URL
+WhoIs                   -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.310.Modules.Network.URL
+
+# File systems
+ADFS                    -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys
+ADFSFiler               -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys
+CDFSDriver              -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys
+ATAPI                   -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys
+CDFS                    -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys
+CDFSFiler               -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys
+DOSFS                   -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys PCMCIA=TRUE
+FileCore                -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys
+Filer                   -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys
+FileSwitch              -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys
+RamFS                   -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys
+RAMFSFiler              -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys
+ResourceFiler           -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys
+ResourceFS              -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys
+SCSIFS                  -options INSTDIR=<Install$Dir>.HardDisc4.Modules.FileSys
+
+# Desktop
+Clipboard               -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Desktop
+DragAnObj               -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Desktop
+DragASprite             -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Desktop
+FilterManager           -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Desktop
+Pinboard                -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Desktop
+RedrawManager           -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Desktop
+WindowManager           -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Desktop OPTIONS=Ursula
+WindowUtils             -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Desktop
+Desktop                 -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Desktop
+
+# Video
+ITable                  -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Video
+FontManager             -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Video
+SpriteUtils             -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Video
+SuperSample             -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Video
+ScreenFX                -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Video
+
+# Debugging
+DebugButtn              -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Debug
+DebugTools              -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Debug
+HeapUtils               -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Debug
+MemInfo                 -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Debug
+SysLoad                 -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Debug
+TrapError               -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Debug
+UnSqzAIF                -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Debug
+WatchAbort              -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Debug
+WatchUserSWIs           -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Debug
+
+# Applications
+CloseUp                 -options INSTDIR=<Install$Dir>.HardDisc4.Apps
+Draw                    -options INSTDIR=<Install$Dir>.HardDisc4.Apps.!Draw
+Edit                    -options INSTDIR=<Install$Dir>.HardDisc4.Apps.!Edit
+Paint                   -options INSTDIR=<Install$Dir>.HardDisc4.Apps.!Paint
+SrcEdit                 -options INSTDIR=<Install$Dir>.HardDisc4.Apps
+Alarm                   -options INSTDIR=<Install$Dir>.HardDisc4.Apps
+Browse                  -options INSTDIR=<Install$Dir>.HardDisc4.Apps.!Browse SYSTEM=Ursula SUFFIX=j TARGET=abs.!RIj
+ChangeFSI               -options INSTDIR=<Install$Dir>.HardDisc4.Apps
+SpriteExtend            -options INSTDIR=<Install$Dir>.HardDisc4.Apps.!ChangeFSI
+Chars                   -options INSTDIR=<Install$Dir>.HardDisc4.Apps
+Help2                   -options INSTDIR=<Install$Dir>.HardDisc4.Apps
+Maestro                 -options INSTDIR=<Install$Dir>.HardDisc4.Apps
+MakeModes               -options INSTDIR=<Install$Dir>.HardDisc4.Apps
+PhoebeSampler           -options INSTDIR=<Install$Dir>.HardDisc4.Apps
+Browse                  -options INSTDIR=<Install$Dir>.HardDisc4.Apps.!Phoenix SYSTEM=Phoenix SUFFIX=j TARGET=abs.!RIj
+SciCalc                 -options INSTDIR=<Install$Dir>.HardDisc4.Apps
+SquashApp               -options INSTDIR=<Install$Dir>.HardDisc4.Apps
+ResCreate               -options INSTDIR=<Install$Dir>.HardDisc4.Apps
+ResEd                   -options INSTDIR=<Install$Dir>.HardDisc4.Apps
+ResTest                 -options INSTDIR=<Install$Dir>.HardDisc4.Apps
+TTXTViewer              -options INSTDIR=<Install$Dir>.HardDisc4.Apps.!TTXTView
+WebServe                -options INSTDIR=<Install$Dir>.HardDisc4.Apps
+
+# Diversions
+Diversions              -options INSTDIR=<Install$Dir>.HardDisc4.Apps.Diversions
+Blocks                  -options INSTDIR=<Install$Dir>.HardDisc4.Apps.Diversions
+Clock                   -options INSTDIR=<Install$Dir>.HardDisc4.Apps.Diversions
+Flasher                 -options INSTDIR=<Install$Dir>.HardDisc4.Apps.Diversions
+MemNow                  -options INSTDIR=<Install$Dir>.HardDisc4.Apps.Diversions
+MineHunt                -options INSTDIR=<Install$Dir>.HardDisc4.Apps.Diversions
+Patience                -options INSTDIR=<Install$Dir>.HardDisc4.Apps.Diversions
+Puzzle                  -options INSTDIR=<Install$Dir>.HardDisc4.Apps.Diversions
+
+# Printing
+FontPrint               -options INSTDIR=<Install$Dir>.HardDisc4.Printing
+PrintDefs               -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources
+PrintEdit               -options INSTDIR=<Install$Dir>.HardDisc4.Printing
+PrinterManager          -options INSTDIR=<Install$Dir>.HardDisc4.Printing.!Printers
+MakePSFont              -options INSTDIR=<Install$Dir>.HardDisc4.Printing.!Printers.Modules
+PDriver                 -options INSTDIR=<Install$Dir>.HardDisc4.Printing.!Printers.Modules
+PDriverDP               -options INSTDIR=<Install$Dir>.HardDisc4.Printing.!Printers.Modules
+PDriverPS               -options INSTDIR=<Install$Dir>.HardDisc4.Printing.!Printers.Modules
+PDumper24               -options INSTDIR=<Install$Dir>.HardDisc4.Printing.!Printers.PDumpers
+PDumperCX               -options INSTDIR=<Install$Dir>.HardDisc4.Printing.!Printers.PDumpers TARGET=PDumperCX2
+PDumperDM               -options INSTDIR=<Install$Dir>.HardDisc4.Printing.!Printers.PDumpers
+PDumperE2               -options INSTDIR=<Install$Dir>.HardDisc4.Printing.!Printers.PDumpers
+PDumperIW               -options INSTDIR=<Install$Dir>.HardDisc4.Printing.!Printers.PDumpers
+PDumperLJ               -options INSTDIR=<Install$Dir>.HardDisc4.Printing.!Printers.PDumpers
+PDumperSP               -options INSTDIR=<Install$Dir>.HardDisc4.Printing.!Printers.PDumpers
+PDumperPCL              -options INSTDIR=<Install$Dir>.HardDisc4.Printing.!Printers.PDumpers
+PDumperSpt              -options INSTDIR=<Install$Dir>.HardDisc4.Printing.!Printers.Modules
+RemotePrinterSupport    -options INSTDIR=<Install$Dir>.HardDisc4.Printing.!Printers.Modules
+T1ToFont                -options INSTDIR=<Install$Dir>.HardDisc4.Printing
+
+# Screen savers
+AcornLogo               -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure.ScrSavers
+Circles                 -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure.ScrSavers
+Pogo                    -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure.ScrSavers
+ScrBounce               -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure.ScrSavers
+Scrolling               -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure.ScrSavers
+Slider                  -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure.ScrSavers
+Smear                   -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure.ScrSavers
+Swarm                   -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure.ScrSavers
+
+# !Configure and plug-ins
+Config2Installer        -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.360.Modules
+Config2Main             -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res
+Config2PluginBoot       -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure
+Config2PluginBootxxxx   -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure.!BootSetup COMPONENT=BootApps
+Config2PluginBootxxxx   -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure.!BootSetup COMPONENT=BootBoot
+Config2PluginBootxxxx   -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure.!BootSetup COMPONENT=BootRun
+Config2PluginDiscSetup  -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure
+Config2PluginFilrSetup  -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure
+Config2PluginFontSetup  -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure
+Config2PluginHelpSetup  -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure
+Config2PluginKbdSetup   -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure
+Config2PluginLockSetup  -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure
+Config2PluginMousSetup  -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure
+Config2PluginPinSetup   -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure
+Config2PluginScrnSetup  -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure
+Config2PluginSndSetup   -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure
+Config2PluginWindSetup  -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure
+Config2PluginxxxxMerge  -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure.!BootSetup COMPONENT=BootMerge
+Config2PluginxxxxMerge  -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure.!FontSetup COMPONENT=FontMerge
+Config2PluginxxxxMerge  -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO500Hook.Res.Configure COMPONENT=SysMerge
+
+# Miscellaneous utilities
+HForm                   -options INSTDIR=<Install$Dir>.HardDisc4.Utilities
+LoadWimp                -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Utils
+
+
+#
+# BATCH FIVE
+#
+
+AcornNCLib              -type EXP
+HTMLLib                 -type EXP
+MemLib                  -type EXP
+ModuleTaskLib           -type EXP
+
+#HAL_IOMD
+
+Public                  -options INSTDIR=<Install$Dir>.HardDisc4.Public
+Scrap                   -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources
+System                  -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources
+Unicode                 -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources
+PatchesPatch            -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.500.Patches
+ShowScrap               -options INSTDIR=<Install$Dir>.HardDisc4.Utilities
+FontMerge               -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!FontMerge
+
+NetFiler                -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Network
+NetFS                   -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Network
+NetPrint                -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Network
+Freeway                 -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Network
+AUNMsgs                 -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Network
+BootNet                 -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Network
+Internet                -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Network
+Net                     -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Network
+DHCP                    -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Network
+NetStatus               -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Network
+NetUtils                -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Network
+InetSetup               -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Network
+InetRes                 -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Network
+
+Debugger                -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+IRQUtils2               -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+Joystick                -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+Mouse                   -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+ParallelDeviceDriver    -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+PS2Driver               -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+RTCAdjust               -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+SCInterface             -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+SystemDevices           -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+BootCommands            -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+KeyWatch                -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+Obey                    -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+RMVersion               -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+IfThere                 -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+HeroNames               -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+PatchApp                -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+ROMFonts                -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Core
+
+SoundDMA                -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Audio
+SoundChannels           -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Audio
+SoundScheduler          -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Audio
+Percussion              -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Audio
+StringLib               -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Audio
+WaveSynth               -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Audio
+
+Fonts                   -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Video
+DrawFile                -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Video
+DisplayManager          -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Video
+GameModes               -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Video
+ColourPicker            -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Video
+ScreenModes             -options INSTDIR=<Install$Dir>.HardDisc4.Modules.Video
+
+#
+# BATCH FIVE - failed to build
+#
+
+#AUNMsgs
+#BootCommands
+#ColourPicker
+#DisplayManager
+#DrawFile
+#FontMerge
+#Fonts
+#Freeway
+#HeroNames
+#InetSetup
+#KeyWatch
+#Net
+#PatchApp
+#RMVersion
+#ROMFonts
+#SCInterface
