@@ -94,7 +94,7 @@ LIBEXT       ?= o
 EXPDIR       ?= ${LIBDIR}.${TARGET}
 DIRS         ?= o._dirs
 HDRS         ?= ${TARGET}
-ASMHDRS      ?= ${TARGET}
+ASMHDRS      ?=
 DBG_OBJS     ?= ${OBJS}
 APP_OBJS     ?= $(addprefix o.,${OBJS})
 APP_DBG_OBJS ?= $(addprefix od.,${DBG_OBJS})
@@ -143,12 +143,12 @@ create_exp_hdr_dirs:
 create_exp_lib_dir:
         ${MKDIR} ${EXPDIR}.${LIBEXT}
 
-.SUFFIXES: .exphdr .expasm .explib .h .hdr .${LIBEXT}
+.SUFFIXES: .exphdr .expasm .explib .h .Hdr .${LIBEXT}
 .h.exphdr:;         ${CP} $< ${EXPDIR}.$< ${CPFLAGS}
 .Hdr.expasm:;       ${CP} $< ${EXPDIR}.$< ${CPFLAGS}
 .${LIBEXT}.explib:; ${CP} $< ${EXPDIR}.$< ${CPFLAGS}
 
-export_hdrs: ${EXPORTING_HDRS} ${DIRS} create_exp_hdr_dirs
+export_hdrs: ${EXPORTING_ASMHDRS} ${EXPORTING_HDRS} ${DIRS} create_exp_hdr_dirs
         @IfThere VersionNum then ${ECHO} ${CP} VersionNum ${EXPDIR}.LibVersion ${CPFLAGS}
         @IfThere VersionNum then ${CP} VersionNum ${EXPDIR}.LibVersion ${CPFLAGS}
         @IfThere ${EXPDIR}.h.*   then else ${RM} ${EXPDIR}.h

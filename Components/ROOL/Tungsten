@@ -9,12 +9,12 @@
 %JoinerFormat  BigSplit
 
 # BBE Support
-# BuildApps
-# BuildExport
-# BuildSystem             -options COMPONENTFILE=Tungsten COMPONENTFILE2=Universal
-# BuildEnvironment        -options ENVFILE=Tungsten
-# BuildModules
-# BuildTools
+BuildApps
+BuildExport
+BuildSystem             -options COMPONENTFILE=Tungsten COMPONENTFILE2=Universal
+BuildEnvironment        -options ENVFILE=Tungsten
+BuildModules
+BuildTools
 
 #------------------------------------------------------------------------------
 # some headers
@@ -49,7 +49,7 @@ UK
 WindowManager         -options OPTIONS=Ursula
 Desktop
 SharedRISC_OSLib
-# NVidia                 -options OPTIONS="-PreDefine \"GeForce2Only SETL {TRUE}\""
+NVidia                 -options OPTIONS="-PreDefine \"GeForce2Only SETL {TRUE}\""
 TaskManager
 ADFSFiler
 ARM
@@ -58,12 +58,12 @@ BASIC64
 BASICTrans
 BufferManager
 ColourTrans
-# Debugger
+Debugger
 DeviceFS
-# USBDriver
-# OHCIDriver
+USBDriver
+OHCIDriver
 OHCIHeaders
-# DisplayManager
+DisplayManager
 DMAManager
 DragASprite
 DragAnObj
@@ -83,17 +83,17 @@ IIC
 International
 InternationalKeyboard -options KEYBOARD=All
 ITable
-# NetFS
-# NetFiler
-# NetPrint
-# NetStatus
-# NetUtils
-# Obey
+NetFS
+NetFiler
+NetPrint
+NetStatus
+NetUtils
+Obey
 Pinboard
 PipeFS
 RAMFSFiler
 ResourceFiler
-# ROMFonts
+ROMFonts
 ScreenBlanker
 ScrSaver              -options SCRSAVERAPP=No
 DualSerial
@@ -103,44 +103,44 @@ SerialMouse
 ShellCLI
 SoundDMA_Tungsten
 SoundControl
-# SoundChannels
-# SoundScheduler
+SoundChannels
+SoundScheduler
 SpriteExtend
 SpriteUtils
 # Squash
 SuperSample
-# SystemDevices
+SystemDevices
 TaskWindow
 WindowUtils
 FilterManager
-# WaveSynth
-# StringLib
-# Percussion
+WaveSynth
+StringLib
+Percussion
 Filer_Action
 DOSFS                 -options PCMCIA=TRUE
-# ColourPicker
-# ScreenModes
-# DrawFile
-# BootCommands
-# AUNMsgs
+ColourPicker
+ScreenModes
+DrawFile
+BootCommands
+AUNMsgs
 # MManager
-# Internet
+Internet
 # Resolver
-# Net
-# BootNet
-# Freeway
+Net
+BootNet
+Freeway
 # ShareFS
 # MimeMap
 # LanManFS              -options OPTIONS=-DCHECK_ARMBOOT_EXISTS ROMSPRITES=TRUE
-# EtherK
-# DHCP                  -options OPTIONS=-DMINIMUM_OPTIONS_LENGTH=4
+EtherK
+DHCP                  -options OPTIONS=-DMINIMUM_OPTIONS_LENGTH=4
 Edit
 Draw
-# Paint
+Paint
 Alarm
 Chars
 Help2
-# RTCAdjust
+RTCAdjust
 
 #
 # Toolbox Modules/Libs
@@ -150,7 +150,7 @@ ToolboxLib
 TinyStubs
 Toolbox
 Window
-# ToolAction
+ToolAction
 Menu
 IconBar
 ColourDbox
@@ -172,7 +172,7 @@ ATAPI
 CDFS
 CDFSFiler
 
-# InetRes -options TYPE=EmergencyUtils
+InetRes -options TYPE=EmergencyUtils
 
 # some libraries and bits
 #
@@ -183,7 +183,7 @@ socklib
 inetlib
 unixlib
 UnicodeLib
-# OSLib
+OSLib
 DeskLib
 
 ModMallocLib

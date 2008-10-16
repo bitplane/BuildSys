@@ -12,7 +12,7 @@ ARM3                    EXP     HWSupport.ARM3
 ABCLib                  EXP     Lib.ABCLib
 ARLib                   C       Lib.ARLib
 DCILib                  C       Lib.DCILib
-OSLib                   EXP     Lib.OSLib
+OSLib                   EXP     ThirdParty.OSLib.Lib.OSLib
 DeskLib                 EXP     ThirdParty.Desk.Lib.Desk
 HALLib                  C       Lib.HALLib
 HTMLLib                 EXP     Lib.HTML
@@ -554,6 +554,7 @@ Swarm                   RES     Video.UserI.ScrSavers.Swarm             ScrSaver
 ProgressUI              C       Video.UserI.ProgressUI                  Video                   ProgressUI
 ModeFiles               ASM     Video.UserI.ModeFiles                   Video                   ModeFiles
 STBSplash               C       Video.UserI.STBSplash                   Video                   STBSplash
+NVidia                  C       Video.HWSupport.NVidia                  Video                   NVidia
 DENCDriver              C       Video.HWSupport.DENCDriver              Video                   DENCDriver
 
 Gadgets                 C       Toolbox.Gadgets                         Toolbox                 TextGadget
