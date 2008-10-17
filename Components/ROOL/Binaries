@@ -161,9 +161,9 @@ AcornNCLib              -type EXP
 HTMLLib                 -type EXP
 BrowseHTMLLib           -type EXP
 zlib                    -type EXP
-ImageLib                -type EXP
 ImageLibJPEG            -type EXP
 ImageLibPNG             -type EXP
+ImageLib                -type EXP
 JSLib                   -type EXP
 
 # Miscellaneous disc stuff
