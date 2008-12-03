@@ -76,7 +76,7 @@ Filer
 FilerSWIs
 FSLock
 FontManager
-# FPEmulator            -options FPE_APCS=3/32bit System=Iyonix
+FPEmulator            -options FPE_APCS=3/32bit System=Iyonix
 Free
 Hourglass
 IIC
@@ -107,7 +107,7 @@ SoundChannels
 SoundScheduler
 SpriteExtend
 SpriteUtils
-# Squash
+Squash
 SuperSample
 SystemDevices
 TaskWindow
@@ -123,15 +123,15 @@ ScreenModes
 DrawFile
 BootCommands
 AUNMsgs
-# MManager
+MManager
 Internet
-# Resolver
+Resolver
 Net
 BootNet
 Freeway
-# ShareFS
-# MimeMap
-# LanManFS              -options OPTIONS=-DCHECK_ARMBOOT_EXISTS ROMSPRITES=TRUE
+ShareFS
+MimeMap
+LanManFS              -options OPTIONS=-DCHECK_ARMBOOT_EXISTS ROMSPRITES=TRUE
 EtherK
 DHCP                  -options OPTIONS=-DMINIMUM_OPTIONS_LENGTH=4
 Edit

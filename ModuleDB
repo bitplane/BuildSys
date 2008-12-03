@@ -412,6 +412,7 @@ EtherS                  C       Networking.Ethernet.EtherS              Networki
 EtherT                  C       Networking.Ethernet.EtherT              Networking              EtherT
 TServer                 C       Networking.TServer                      Networking              TServer
 SendMessage             C       Networking.Utilities.SendMsg            Networking              SendMessage
+LanManFS                C       Networking.Omni.Protocols.LanManFS      Networking              LanManFS
 
 OSVersion               ASM     OSVersion                               RISC_OS                 OSVersion
 
