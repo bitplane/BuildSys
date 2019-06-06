@@ -101,6 +101,11 @@ APP_LIBS     += ${C++LIB}
 DBG_LIBS     += ${C++LIB}
 ROM_LIBS     += ${C++LIB}
 endif
+ifeq (Fortran,${LINK_TYPE})
+APP_LIBS     += ${FORTLIB}
+DBG_LIBS     += ${FORTLIB}
+ROM_LIBS     += ${FORTLIB}
+endif
 APP_LIBS     += ${CLIB}
 DBG_LIBS     += ${CLIB}
 WRAPPER      ?= ${LIBDIR}/RISC_OSLib/modulewrap.s

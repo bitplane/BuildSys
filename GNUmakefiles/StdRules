@@ -8,7 +8,13 @@ define make-depend
 	@${SED} -i -e 's,$(basename $2).o *:,$2:,' $3
 endef
 
-# $(call make-depend,source,object,depend)
+# $(call make-fc-depend,source,object,depend)
+define make-fc-depend
+	@${FC} ${FCFLAGS} -M $1 > $3 2> /dev/null
+	@${SED} -i -e 's,$(basename $2).o *:,$2:,' $3
+endef
+
+# $(call make-cpp-depend,source,object,depend)
 ifeq (GNU,${TOOLCHAIN})
 define make-cpp-depend
 	@${C++} ${C++FLAGS} -M $1 > $3 2> /dev/null
@@ -19,7 +25,7 @@ define make-cpp-depend
 endef
 endif
 
-.SUFFIXES: .o .oh .ok .oz .s .c .h .c++ .cpp
+.SUFFIXES: .o .oh .ok .oz .s .c .h .c++ .cpp .f
 
 # C source files -> object files
 .c.o:
@@ -48,6 +54,14 @@ endif
 .cpp.oz:
 	${C++} ${C++FLAGS} ${C_MODULE} -o $@ $<
 	$(call make-cpp-depend,$<,$@,$(subst .oz,.dz,$@))
+
+# Fortran source files -> object files
+.f.o:
+	${FC} ${FCFLAGS} -o $@ $<
+	$(call make-fc-depend,$<,$@,$(subst .o,.d,$@))
+.f.oz:
+	${FC} ${FCFLAGS} ${C_MODULE} -o $@ $<
+	$(call make-fc-depend,$<,$@,$(subst .oz,.dz,$@))
 
 # Assembler source files -> object files
 .s.o:

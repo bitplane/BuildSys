@@ -43,6 +43,7 @@ DEFMOD          = defmod
 DO              = do
 ECHO            = echo
 ERASECVS        = EraseCVS
+FC              = f77
 FAPPEND         = FAppend
 FILTERCOMP      = ${PERL} Build:FilterComp
 FILTERCOMP2     = ${PERL} Build:FilterComp2
@@ -121,6 +122,7 @@ CMODFLAGS += -DRISCOS_MODULE
 C++INCLUDES += -ICPP:
 C++FLAGS += -c ${STDTOOLOPTIONS} ${C++DEFINES} ${C++INCLUDES}
 CMHGFLAGS +=  -p ${STDTOOLOPTIONS} ${CMHGDEFINES} ${CMHGINCLUDES}
+FCFLAGS += -c ${STDTOOLOPTIONS} ${FCDEFINES} ${C_NO_FNAMES} ${C_WARNINGS}
 SQUISHFLAGS += -nolist -nosavepath
 
 C_WARNINGS  := -fah

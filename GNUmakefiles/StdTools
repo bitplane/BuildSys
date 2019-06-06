@@ -54,6 +54,7 @@ C++             = armcpp
 CMHG            = armcmhg
 CPREPRO         = armcc -C++ -E
 ELF2AIF         = @echo > /dev/null
+FC              = armf77
 ifeq (C++,${LINK_TYPE})
 LD              = armlink -c++
 else
@@ -173,6 +174,7 @@ endif
 CFLAGS      += -c ${STDTOOLOPTIONS} ${CDEFINES} ${CINCLUDES} ${C_NO_FNAMES} ${C_WARNINGS}
 C++FLAGS    += -c ${STDTOOLOPTIONS} ${C++DEFINES} ${C++INCLUDES} ${CXXFLAGS}
 CMHGFLAGS   += -p ${STDTOOLOPTIONS} ${CMHGDEFINES} ${CMHGINCLUDES}
+FCFLAGS     += -c ${STDTOOLOPTIONS} ${FCDEFINES} ${C_NO_FNAMES} ${C_WARNINGS}
 
 ifeq (GNU,${TOOLCHAIN})
 

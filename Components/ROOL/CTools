@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# Components file for C compiler and tool chain CD
+# Components file for the DDE tool chain
 #------------------------------------------------------------------------------
 %BaseAddress   0x00000000
 %Image         Build$ImageName
@@ -86,6 +86,7 @@ CLXLite                 -type EXP
 CLX                     -type EXP
 DDTLib                  -options INSTDIR=Install:DDE.AcornC/C++.Export.<APCS>.Lib
 DeskLib                 -options INSTDIR=Install:DDE.AcornC/C++.Export.<APCS>.Lib
+F77Lib                  -options INSTDIR=Install:DDE.AcornC/C++.Export.<APCS>.Lib
 ModMallocLib            -options INSTDIR=Install:DDE.AcornC/C++.Export.<APCS>.Lib
 PDebug                  -options INSTDIR=Install:DDE.AcornC/C++.Export.<APCS>.Lib
 PlainArgvLib            -type EXP
@@ -161,6 +162,7 @@ cfront                  -options INSTDIR=Install:DDE.AcornC/C++.!SetPaths.Lib32
 cmhg                    -options INSTDIR=Install:DDE.AcornC/C++.!SetPaths.Lib32 INSTTYPE=tool
 decaof                  -options INSTDIR=Install:DDE.AcornC/C++.!SetPaths.Lib32 INSTTYPE=tool
 diff                    -options INSTDIR=Install:DDE.AcornC/C++.!SetPaths.Lib32 INSTTYPE=tool
+f77                     -options INSTDIR=Install:DDE.AcornC/C++.!SetPaths.Lib32 INSTTYPE=tool
 find                    -options INSTDIR=Install:DDE.AcornC/C++.!SetPaths.Lib32 INSTTYPE=tool
 libfile                 -options INSTDIR=Install:DDE.AcornC/C++.!SetPaths.Lib32 INSTTYPE=tool
 link                    -options INSTDIR=Install:DDE.AcornC/C++.!SetPaths.Lib32 INSTTYPE=tool
@@ -223,6 +225,7 @@ cmhg                    -options INSTDIR=Install:DDE.Apps.DDE INSTTYPE=app
 ddt                     -options INSTDIR=Install:DDE.Apps.DDE INSTTYPE=app
 decaof                  -options INSTDIR=Install:DDE.Apps.DDE INSTTYPE=app
 diff                    -options INSTDIR=Install:DDE.Apps.DDE INSTTYPE=app
+f77                     -options INSTDIR=Install:DDE.Apps.DDE INSTTYPE=app
 find                    -options INSTDIR=Install:DDE.Apps.DDE INSTTYPE=app
 libfile                 -options INSTDIR=Install:DDE.Apps.DDE INSTTYPE=app
 link                    -options INSTDIR=Install:DDE.Apps.DDE INSTTYPE=app

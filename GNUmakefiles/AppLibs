@@ -25,6 +25,8 @@ else
 C++LIB    = ${LIBDIR}/c++lib/c++lib.a
 endif
 CLXLIB    = ${LIBDIR}/CLX/clxlib.a
+FORTLIB   = ${LIBDIR}/F77Lib/fortlib.a
+FORTEXTLIB = ${LIBDIR}/F77Lib/fortextra.a
 
 TBOXLIB   = ${LIBDIR}/tboxlibs/toolboxlib.a
 FLEXLIB   = ${LIBDIR}/tboxlibs/flexlib.a

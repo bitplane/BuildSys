@@ -33,6 +33,8 @@ A_ABSSYM  = RISC_OSLib:o.a_abssym
 ASMUTILS  = C:AsmUtils.o.AsmUtils
 C++LIB    = C:C++Lib.o.c++lib
 CLXLIB    = C:CLX.o.clxlib
+FORTLIB   = C:F77Lib.o.fortlib
+FORTEXTLIB = C:F77Lib.o.fortextra
 
 TBOXLIB   = C:tboxlibs.o.toolboxlib
 FLEXLIB   = C:tboxlibs.o.flexlib

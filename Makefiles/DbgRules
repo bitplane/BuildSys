@@ -24,9 +24,10 @@ INCLUDED_DBGRULES = YES
 CDFLAGS   += -gflv
 C++DFLAGS += +g
 ASDFLAGS  += -G
+F77DFLAGS += -gflv
 LDDFLAGS  += -d
 
-.SUFFIXES: .i .od .odz .s .c .h .c++ .cpp
+.SUFFIXES: .i .od .odz .s .c .h .c++ .cpp .f
 
 # C source files -> object files
 .c.od:;         ${CC} $(filter-out ${C_NO_FNAMES},${CFLAGS}) ${CDFLAGS} ${CAPPFLAGS} -o $@ $<
@@ -41,9 +42,14 @@ LDDFLAGS  += -d
 .c++.i:;        ${CPREPRO} ${C++FLAGS} -C $< > $@
 .cpp.i:;        ${CPREPRO} ${C++FLAGS} -C $< > $@
 
+# Fortran source files -> object files
+.f.od:;         ${FC} $(filter-out ${C_NO_FNAMES},${FCFLAGS}) ${FCDFLAGS} -o $@ $<
+.f.odz:;        ${FC} $(filter-out ${C_NO_FNAMES},${FCFLAGS}) ${FCDFLAGS} ${C_MODULE} -o $@ $<
+.f.i:;          ${CPREPRO} ${FCFLAGS} -C $< > $@
+
 # Assembler source files -> object files
 .s.od:;         ${AS} ${ASFLAGS} ${ASDFLAGS} -o $@ $<
-.s.odz:;        ${AS} ${ASFLAGS} ${ASDFLAGS} -pd "zM SETL {TRUE}" -o $@ $<
+.s.odz:;        ${AS} ${ASFLAGS} ${ASDFLAGS} ${ASMODFLAGS} -o $@ $<
 .s.i:;          @${NOP}
 
 

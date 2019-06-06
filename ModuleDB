@@ -29,6 +29,7 @@ DeskLib                     C     Sources.Lib.Desk
 DThreads                    EXP   Sources.Lib.DThreads
 EmailLib                    C     closed.RiscOS.Sources.Lib.Email.EmailLib
 ErrorLib                    C     closed.RiscOS.Sources.Lib.ErrorLib
+F77Lib                      C     Sources.Lib.F77Lib
 HALLib                      C     Sources.Lib.HALLib
 HdrSrc                      C     Sources.Programmer.HdrSrc
 HTMLLib                     EXP   Sources.Lib.HTML
@@ -688,6 +689,7 @@ DummyEconet                 ASM   Utilities.DummyEconet                         
 DummyParallel               ASM   Utilities.DummyParallel                                               Tools           DummyParallel
 egrep                       C     Tools.Sources.GNU.grep                                                Tools           egrep
 EraseCVS                    C     Utilities.CVSUtils.EraseCVS                                           Tools           EraseCVS
+f77                         C     Tools.Sources.cc                                                      Tools           f77
 FileCRC                     C     Tools.Sources.FileCRC                                                 Tools           FileCRC
 find                        C     Tools.Sources.find                                                    Tools           find
 flex                        C     Tools.Sources.GNU.flex                                                Tools           flex

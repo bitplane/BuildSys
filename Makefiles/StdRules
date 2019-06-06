@@ -21,7 +21,7 @@ INCLUDED_STDRULES = YES
 #
 #
 
-.SUFFIXES: .o .oh .ok .oz .s .c .h .c++ .cpp
+.SUFFIXES: .o .oh .ok .oz .s .c .h .c++ .cpp .f
 
 # C source files -> object files
 .c.o:;          ${CC} ${CFLAGS} ${CAPPFLAGS} -o $@ $<
@@ -34,6 +34,10 @@ INCLUDED_STDRULES = YES
 .cpp.o:;        ${C++} ${C++FLAGS} -o $@ $<
 .c++.oz:;       ${C++} ${C++FLAGS} ${C_MODULE} -o $@ $<
 .cpp.oz:;       ${C++} ${C++FLAGS} ${C_MODULE} -o $@ $<
+
+# Fortran source files -> object files
+.f.o:;          ${FC} ${FCFLAGS} -o $@ $<
+.f.oz:;         ${FC} ${FCFLAGS} ${C_MODULE} -o $@ $<
 
 # Assembler source files -> object files
 .s.o:;          ${AS} ${ASFLAGS} -o $@ $<
