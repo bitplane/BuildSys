@@ -5,7 +5,7 @@ INCLUDED_CAPP = YES
 #
 # This makefile provides the following phony targets:
 #
-#    all  install  debug  resources  rom  rom_link
+#    all  standalone  install  debug  resources  rom  rom_link
 #
 #
 # This fragment uses the following macros set by the master makefile.
@@ -136,7 +136,7 @@ clean::
 	@rm -rf objs
 	@echo ${COMPONENT}: cleaned
 else
-all install debug resources rom rom_link links: ${SYMLINK_DEPEND}
+all standalone install debug resources rom rom_link links: ${SYMLINK_DEPEND}
 	$(foreach linksource,${SOURCES_TO_SYMLINK}, \
 		$(shell \
 			linkdest=`echo ${linksource} | sed -e 's,\([^/]\+\)/\([^/]\+\)$$,\2.\1,' -e 's,^,objs/,'`; \
@@ -182,7 +182,7 @@ ROM_LIBS_     = $(filter-out ${RLIB},${ROM_LIBS}) ${ROMSTUBS}
 ROM_SYMS      = ${ABSSYM}
 endif
 
-all: ${TARGET}${SUFFIX_ABSOLUTE}
+all standalone: ${TARGET}${SUFFIX_ABSOLUTE}
 	@${ECHO} ${COMPONENT}: application built
 
 # GNU make seems to treat any double-colon rule with no dependencies as

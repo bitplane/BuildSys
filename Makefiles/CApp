@@ -21,7 +21,7 @@ INCLUDED_CAPP = YES
 #
 # This makefile provides the following phony targets:
 #
-#    all  install  debug  resources  rom  rom_link
+#    all  standalone  install  debug  resources  rom  rom_link
 #
 #
 # This fragment uses the following macros set by the master makefile.
@@ -157,7 +157,7 @@ ROM_LIBS_     = $(filter-out ${RLIB},${ROM_LIBS}) ${ROMSTUBS}
 ROM_SYMS      = ${ABSSYM}
 endif
 
-all: ${TARGET}
+all standalone: ${TARGET}
         @${ECHO} ${COMPONENT}: application built
 
 ${DIRS} ::
