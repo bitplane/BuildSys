@@ -9,6 +9,7 @@ INCLUDED_LIBINCLUDES = YES
 # building libraries that depend upon other libraries, despite there not being
 # any link step for such components.
 
+CONINC     = -IC:ConfigLib
 IMAGEINC   = -IC:ImageLib
 JSINC      = -IC:JSLib
 OSINC      = -IOS:
