@@ -66,7 +66,7 @@ BASCRUNCH       = toffb --crunch
 BINAOF          = binaof
 CAT             = cat
 #DATA2AOF        = datatoaof
-#DEFMOD          = defmod
+DEFMOD          = ASMCMD=${AS} defmod ${TOOLOPTIONS}
 DO              = 
 ECHO            = echo
 ERASECVS        = @erasecvs () { echo EraseCVS $$1; find $$1 -type d -exec rm -rf '{}/CVS' \; -exec rm -f '{}/.cvstag' \; }; erasecvs
@@ -89,7 +89,7 @@ NOP             = #
 PERL            = perl
 RESGEN          = resgen
 RM              = rm -f
-#SETTYPE         = settype
+SETTYPE         = @echo > /dev/null
 SQUASH          = Squash
 SQUISH          = sbrandy -quit ${TOOLSDIR}/Build/Squish,ffb --
 ifneq (Host,${APCS})
@@ -119,6 +119,7 @@ LS              = ls
 MKDIR           = mkdir -p
 PWD             = pwd
 RPCGEN          = rpcgen
+RUN             = ./
 SED             = sed
 WC              = wc
 YACC            = bison

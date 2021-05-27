@@ -94,6 +94,7 @@ LS              = Unix.ls
 MKDIR           = ${DO} mkdir -p
 PWD             = Unix.pwd
 RPCGEN          = rpcgen
+RUN             = /
 SED             = sed
 WC              = Unix.wc
 YACC            = GNU.bison
