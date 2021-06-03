@@ -23,9 +23,9 @@ Common                      C     Sources.Lib.Email.EmailCommon
 ConfigLib                   C     Sources.Lib.ConfigLib
 DCILib                      C     closed.RiscOS.Sources.Lib.DCILib
 DDT                         EXP   Sources.Programmer.DDTHdr
-DDTLib                      C     Sources.Lib.DDTLib
-DebugLib                    C     Sources.Lib.DebugLib
-DeskLib                     C     Sources.Lib.Desk
+DDTLib                      EXP   Sources.Lib.DDTLib
+DebugLib                    EXP   Sources.Lib.DebugLib
+DeskLib                     EXP   Sources.Lib.Desk
 DThreads                    EXP   Sources.Lib.DThreads
 EmailLib                    C     closed.RiscOS.Sources.Lib.Email.EmailLib
 ErrorLib                    C     closed.RiscOS.Sources.Lib.ErrorLib
@@ -46,7 +46,7 @@ Mailbox                     C     closed.RiscOS.Sources.Lib.Email.Mailbox
 mbedTLS                     C     Sources.Lib.mbedTLS
 MemCheckLib                 EXP   closed.RiscOS.Sources.Lib.MemCheck
 MemLib                      C     Sources.Lib.MemLib
-ModMallocLib                C     Sources.Lib.ModMalloc
+ModMallocLib                EXP   Sources.Lib.ModMalloc
 ModuleTaskLib               EXP   Sources.Lib.ModuleTask
 MPEGHdrs                    EXP   closed.RiscOS.Sources.Video.MPEG.MPEGHdrs
 MsgLib                      EXP   closed.RiscOS.Sources.Lib.MsgLib
@@ -56,11 +56,11 @@ NetLink                     C     closed.RiscOS.Sources.Lib.Email.NetLink
 NSPRLib                     EXP   Sources.Lib.NSPRLib
 NumConvert                  C     closed.RiscOS.Sources.Lib.NumConvert
 OSLib                       EXP   Sources.Lib.OSLib
-PDebug                      C     Sources.Lib.PDebug
+PDebug                      EXP   Sources.Lib.PDebug
 PDumperHdrs                 EXP   Sources.Printing.PDumpers
 PlainArgvLib                EXP   Sources.Lib.PlainArgv
 PRISMLib                    EXP   Sources.Lib.PRISMLib
-RemoteDebug                 C     Sources.Lib.remotedb
+RemoteDebug                 EXP   Sources.Lib.remotedb
 ReplayLib                   C     Sources.Lib.ARLib.Replay
 RMVersion                   ASM   Sources.Programmer.RMVersion
 rpclib                      C     Sources.Lib.TCPIPLibs.rpclib.rpc
@@ -77,11 +77,11 @@ SyncLib                     EXP   Sources.Lib.SyncLib
 TCPIPheaders                C     Sources.Lib.TCPIPLibs.headers
 TGRLib                      EXP   closed.RiscOS.Sources.Lib.TGRlib
 ToolboxLib                  C     Sources.Toolbox.ToolboxLib
-Trace                       C     Sources.Lib.Trace
+Trace                       EXP   Sources.Lib.Trace
 UnicodeLib                  C     Sources.Lib.UnicodeLib
 unixlib                     C     Sources.Lib.TCPIPLibs.unixlib
 UtilLib                     C     Sources.Lib.UtilLib
-Wild                        C     Sources.Lib.Wild
+Wild                        EXP   Sources.Lib.Wild
 xolib                       EXP   Sources.Lib.TCPIPLibs.xolib
 zlib                        EXP   Sources.Lib.zlib
 zlibmodlib                  EXP   Sources.Lib.zlib
@@ -173,7 +173,7 @@ AcornSSL                    C     Sources.Networking.Fetchers.AcornSSL          
 AcornURI                    C     Sources.Networking.URI                                                Networking      URI
 ADFS                        C     Sources.FileSys.ADFS.ADFS                                             FileSys         ADFS
 ADFS4                       C     Sources.FileSys.ADFS.ADFS4                                            FileSys         ADFS
-ADFSFiler                   ASM   Sources.FileSys.ADFS.ADFSFiler                                        FileSys         ADFSFiler
+ADFSFiler                   C     Sources.FileSys.ADFS.ADFSFiler                                        FileSys         ADFSFiler
 AHCIDriver                  C     Sources.HWSupport.SCSI.AHCIDriver                                     HWSupport       AHCIDriver
 ARM                         ASM   Sources.HWSupport.ARM                                                 HWSupport       ARM
 ArmBE                       C     Sources.Programmer.ArmBE                                              Programmer      ArmBE
@@ -186,7 +186,7 @@ BASIC105                    ASM   Sources.Programmer.BASIC                      
 BASIC64                     ASM   Sources.Programmer.BASIC                                              Programmer      BASIC64
 BASICTrans                  ASM   Sources.Programmer.BASICTrans                                         Programmer      BASICTrans
 BASICVFP                    ASM   Sources.Programmer.BASIC                                              Programmer      BASICVFP
-BatMgr                      ASM   Sources.HWSupport.BatMgr                                              HWSupport       BatMgr
+BatMgr                      C     Sources.HWSupport.BatMgr                                              HWSupport       BatMgr
 BatMgrHAL                   C     Sources.HWSupport.BatMgrHAL                                           HWSupport       BatMgr
 BBCEconet                   ASM   Sources.Networking.BBCEconet                                          Networking      BBCEconet
 BCMSound                    ASM   Sources.HWSupport.Sound.BCMSound                                      HWSupport       BCMSound
@@ -285,7 +285,7 @@ FileDbox                    C     Sources.Toolbox.FileDbox                      
 FileFetcher                 C     Sources.Networking.Fetchers.File                                      Networking      File
 FileInfo                    C     Sources.Toolbox.FileInfo                                              Toolbox         FileInfo
 FilePlay                    C     closed.RiscOS.Sources.Audio.FilePlay                                  Audio           FilePlay
-Filer                       ASM   Sources.Desktop.Filer                                                 Desktop         Filer
+Filer                       C     Sources.Desktop.Filer                                                 Desktop         Filer
 FilerSWIs                   ASM   Sources.Desktop.FilerSWIs                                             Desktop         FilerSWIs
 Filer_Action                C     Sources.Desktop.FilerAct                                              Desktop         FilerAct
 FilerUtils                  ASM   Sources.Utilities.Patches.FilerUtils                                  Desktop         FilerUtils
@@ -308,7 +308,7 @@ FontManager                 ASM   Sources.Video.Render.Fonts.FontManager        
 FontMenu                    C     Sources.Toolbox.FontMenu                                              Toolbox         FontMenu
 FPEmulator                  ASM   Sources.HWSupport.FPASC.riscos                                        HWSupport       FPEmulator
 France                      ASM   Sources.Internat.Territory.TerritoryModule                            Internat        France
-Free                        ASM   Sources.Desktop.Free                                                  Desktop         Free
+Free                        C     Sources.Desktop.Free                                                  Desktop         Free
 Freeway                     C     Sources.Networking.AUN.Access.Freeway                                 Networking      Freeway
 FrontEnd                    C     Sources.Programmer.FrontEnd                                           Programmer      FrontEnd
 FrontPanel                  C     closed.RiscOS.Sources.HWSupport.FrontPanel                            HWSupport       FrontPanel
@@ -401,7 +401,7 @@ NCUpgrade                   C     closed.RiscOS.Sources.Apps.NCUpgrade          
 NCWriter                    C     closed.RiscOS.Sources.Apps.NCWriter                                   Apps            NCWriter
 Net                         C     Sources.Networking.AUN.Net                                            Networking      Net
 NetI                        C     Sources.Networking.AUN.Net                                            Networking      NetI
-NetFiler                    ASM   Sources.FileSys.NetFS.NetFiler                                        FileSys         NetFiler
+NetFiler                    C     Sources.FileSys.NetFS.NetFiler                                        FileSys         NetFiler
 NetFS                       ASM   Sources.FileSys.NetFS.NetFS                                           FileSys         NetFS
 Netherlands                 ASM   Sources.Internat.Territory.TerritoryModule                            Internat        Netherland
 NetMonitor                  ASM   Sources.Networking.NetMonitor                                         Networking      NetMonitor
@@ -417,7 +417,7 @@ NoAltBreak                  RES   closed.RiscOS.Sources.SystemRes.STB.Utilities.
 Norway                      ASM   Sources.Internat.Territory.TerritoryModule                            Internat        Norway
 NVidia                      C     Sources.Video.HWSupport.NVidia                                        Video           NVidia
 NVMeFS                      C     Sources.FileSys.NVMeFS.NVMeFS                                         FileSys         NVMeFS
-NVMeFiler                   ASM   Sources.FileSys.ADFS.ADFSFiler                                        FileSys         NVMeFiler
+NVMeFiler                   C     Sources.FileSys.ADFS.ADFSFiler                                        FileSys         NVMeFiler
 NVMeDriver                  C     Sources.HWSupport.NVMe.NVMeDriver                                     HWSupport       NVMeDriver
 NVRAM                       C     Sources.HWSupport.NVRAM                                               HWSupport       NVRAM
 Obey                        C     Sources.Programmer.Obey                                               Programmer      Obey
@@ -462,7 +462,7 @@ PDumperZ12                  C     closed.RiscOS.Sources.Printing.NewDumpers.PDum
 Percussion                  ASM   Sources.HWSupport.Sound.Voices.Percussion                             HWSupport       Percussion
 PHCIDriver                  C     Sources.HWSupport.USB.Controllers.PHCIDriver                          USB             PHCIDriver
 PhoebeSampler               C     Sources.Apps.Sampler                                                  Apps            Sampler
-Pinboard                    ASM   Sources.Desktop.Pinboard                                              Desktop         Pinboard
+Pinboard                    C     Sources.Desktop.Pinboard                                              Desktop         Pinboard
 PineVideo                   C     Sources.Video.HWSupport.PineVideo                                     Video           PineVideo
 PipeFS                      ASM   Sources.FileSys.PipeFS                                                FileSys         PipeFS
 PlugnPlay                   C     closed.RiscOS.Sources.Networking.ATM.PlugnPlay                        Networking      PlugnPlay
@@ -538,14 +538,14 @@ Scrolling                   C     Sources.Video.UserI.ScrSavers.Scrolling       
 ScrollingSetup              C     Sources.Video.UserI.ScrSavers.Scrolling.Settings                      ScrSavers       ScrollingSetup
 ScrSaver                    C     Sources.Video.UserI.ScrSaver                                          Video           ScrSaver
 SCSIDriver                  ASM   Sources.HWSupport.SCSI.SCSIDriver                                     HWSupport       SCSIDriver
-SCSIFiler                   ASM   Sources.FileSys.ADFS.ADFSFiler                                        FileSys         SCSIFiler
+SCSIFiler                   C     Sources.FileSys.ADFS.ADFSFiler                                        FileSys         SCSIFiler
 #SCSIFiler                   ASM   ???.RiscOS.Sources.FileSys.SCSIFS.SCSIFiler                           FileSys         SCSIFiler
 SCSIFS                      C     Sources.FileSys.SCSIFS.SCSIFS                                         FileSys         SCSIFS
 SCSISoftUSB                 C     Sources.HWSupport.SCSI.SCSISoftUSB                                    HWSupport       SCSISoftUSB
 SCSISwitch                  C     Sources.HWSupport.SCSI.SCSISwitch                                     HWSupport       SCSIDriver
 SDCMOS                      C     Sources.HWSupport.SD.SDCMOS                                           HWSupport       SDCMOS
 SDFS                        C     Sources.FileSys.SDFS.SDFS                                             FileSys         SDFS
-SDFSFiler                   ASM   Sources.FileSys.ADFS.ADFSFiler                                        FileSys         SDFSFiler
+SDFSFiler                   C     Sources.FileSys.ADFS.ADFSFiler                                        FileSys         SDFSFiler
 SDIODriver                  C     Sources.HWSupport.SD.SDIODriver                                       HWSupport       SDIODriver
 SCTransport                 C     closed.RiscOS.Sources.HWSupport.SmartCard.SCTrans                     HWSupport       SCTrans
 SendMessage                 C     closed.RiscOS.Sources.Networking.Utilities.SendMsg                    Networking      SendMessage
@@ -593,7 +593,7 @@ SparkZip                    C     Sources.FileSys.ImageFS.SparkFS.Codecs.SparkZi
 SparkZoo                    C     Sources.FileSys.ImageFS.SparkFS.Codecs.SparkZoo                       FileSys         SparkZoo
 SPIDriver                   C     Sources.HWSupport.SPIDriver                                           HWSupport       SPIDriver
 SprBounce                   BAS   Sources.Video.UserI.ScrSavers.SprBounce                                   ThirdParty  !SprBounce
-SpriteExtend                ASM   Sources.Video.Render.SprExtend                                        Video           SprExtend
+SpriteExtend                C     Sources.Video.Render.SprExtend                                        Video           SprExtend
 SpriteUtils                 ASM   Sources.Video.Render.SpriteUtil                                       Video           SpriteUtil
 Squash                      C     Sources.Programmer.Squash                                             Programmer      Squash
 SrcEdit                     C     Sources.Apps.SrcEdit                                                  Apps            SrcEdit
@@ -613,10 +613,10 @@ SysLoad                     C     Sources.Programmer.SysLoad                    
 SystemDevices               ASM   Sources.HWSupport.SystemDevs                                          HWSupport       SystemDevs
 Tabs                        C     Sources.Toolbox.TabsGadget                                            Toolbox         Tabs
 Taiwan                      ASM   Sources.Internat.Territory.TerritoryModule                            Internat        Taiwan
-TaskManager                 ASM   Sources.Desktop.Switcher                                              Desktop         Switcher
+TaskManager                 C     Sources.Desktop.Switcher                                              Desktop         Switcher
 TaskModule                  C     closed.RiscOS.Sources.Desktop.TaskModule                              Desktop         TaskModule
 TaskWindow                  ASM   Sources.Desktop.TaskWindow                                            Desktop         TaskWindow
-tboxlib                     C     Sources.Toolbox.tboxlib                                               Toolbox
+tboxlib                     EXP   Sources.Toolbox.tboxlib                                               Toolbox
 TerritoryManager            C     Sources.Internat.Territory.TerritoryManager                           Internat        TerrMgr
 TFTP                        C     closed.RiscOS.Sources.Networking.TFTP                                 Networking      TFTP
 TFTPserver                  C     closed.RiscOS.Sources.Networking.TFTPserver                           Networking      TFTPserver
