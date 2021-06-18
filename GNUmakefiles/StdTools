@@ -198,6 +198,8 @@ CHALFLAGS   += -fomit-frame-pointer -mno-apcs-stack-check
 CKRNFLAGS   += -fomit-frame-pointer -mno-apcs-stack-check
 endif
 C_NOWARN_ASSIGNMENT_AS_CONDITION := -Wno-parentheses
+C_NOWARN_FUNCCAST :=
+C_NOWARN_NARROWING_CAST :=
 C_NOWARN_NON_ANSI_INCLUDES :=
 
 else
@@ -220,6 +222,8 @@ C_NO_FNAMES := -ff
 C_FNAMES    := -fn
 C_MODULE    := -zM
 C_NOWARN_ASSIGNMENT_AS_CONDITION := -Wa
+C_NOWARN_FUNCCAST := -We
+C_NOWARN_NARROWING_CAST := -Wn
 C_NOWARN_NON_ANSI_INCLUDES := -Wp
 
 endif
