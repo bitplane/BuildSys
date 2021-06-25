@@ -250,7 +250,7 @@ endif
 
 install${CUSTOMSA}: ${SA_MODULE}
 	${MKDIR} ${INSTDIR}
-	${CP} ${SA_MODULE} ${INSTDIR}/${TARGET} ${CPFLAGS}
+	${CP} ${SA_MODULE} ${INSTDIR}/${TARGET}${SUFFIX_MODULE} ${CPFLAGS}
 	@${ECHO} ${COMPONENT}: standalone module installed
 
 debug${CUSTOMDBG}: ${DBG_MODULE}
