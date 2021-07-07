@@ -393,7 +393,7 @@ ${RES_OBJ}.o: ${DIRS} resources-${CMDHELP}
 ${RES_OBJ}.od: ${RES_OBJ}.o
 	${CP} $< $@
 
-ifeq ($(filter no custom,${CUSTOMRES}),)
+ifeq ($(filter custom,${CUSTOMRES}),)
 ${MERGEDMSGS}:
 	${MKDIR} ${MERGEDRDIR}/tmp
 	${MKDIR} ${MERGEDRDIR}/${TARGET}
