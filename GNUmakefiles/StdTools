@@ -9,6 +9,7 @@ INCLUDED_STDTOOLS = YES
 ifneq (Host,${APCS})
 GNUTOOLPREFIX = arm-unknown-riscos-
 SUFFIX_DATA     = ,ffd
+SUFFIX_UTILITY  = ,ffc
 SUFFIX_BASIC    = ,ffb
 SUFFIX_MODULE   = ,ffa
 SUFFIX_SPRITE   = ,ff9
