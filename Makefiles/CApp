@@ -222,8 +222,6 @@ debug: ${DBG_TARGET}
 
 resources:
         ${MKDIR} ${RESFSDIR}
-        ${TOKENCHECK} LocalRes:Messages
-        ${CP} LocalRes:Messages ${RESFSDIR}.Messages ${CPFLAGS}
 ifneq (${RES_FILES},)
         ${INSTRES} -I Resources.${LOCALE}.ROM,Resources.UK.ROM,Resources.ROM,Resources.${LOCALE},Resources.UK,Resources ${RESFSDIR} ${RES_FILES}
 endif
