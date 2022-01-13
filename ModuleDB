@@ -60,7 +60,9 @@ PRISMLib                    EXP   Sources.Lib.PRISMLib
 RemoteDebug                 C     Sources.Lib.remotedb
 RMVersion                   ASM   Sources.Programmer.RMVersion
 rpclib                      EXP   Sources.Lib.TCPIPLibs.rpclib.rpc
+SDIOLib                     C     Sources.Lib.SDIOLib
 ShareD                      EXP   Sources.Networking.AUN.Access.ShareFSBlob.ShareFS
+SMHCLib                     C     Sources.Lib.SMHCLib
 socklib                     EXP   Sources.Lib.TCPIPLibs.socklib
 SSLeay                      EXP   closed.RiscOS.Sources.Lib.SSLeay
 SSLRO                       EXP   closed.RiscOS.Sources.Networking.libs.SSLRO
