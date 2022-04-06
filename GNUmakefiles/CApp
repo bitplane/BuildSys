@@ -203,13 +203,13 @@ install_app${CUSTOMINSTALLAPP}: ${INSTAPP_DEPENDS}
 	${MKDIR} ${INSTAPP}
 	${INSTRES} -I Resources.${USERIF}.${LOCALE},Resources.${USERIF}.UK,Resources.${LOCALE},Resources.UK,Resources ${INSTAPP} ${INSTAPP_FILES}
 ifneq (,$(filter Messages,${INSTAPP_VERSION}))
-	TMP=`mktemp`; ${INSERTVERSION} ${INSTAPP}/Messages > $$TMP; mv $$TMP ${INSTAPP}/Messages
+	TMP=`mktemp` && ${INSERTVERSION} ${INSTAPP}/Messages > $$TMP && mv $$TMP ${INSTAPP}/Messages
 endif        
 ifneq (,$(filter Desc,${INSTAPP_VERSION}))
-	TMP=`mktemp`; ${INSERTVERSION} descmode=1 ${INSTAPP}/Desc ${INSTAPP}/Desc > $$TMP; mv $$TMP ${INSTAPP}/Desc
+	TMP=`mktemp` && ${INSERTVERSION} descmode=1 ${INSTAPP}/Desc ${INSTAPP}/Desc > $$TMP && mv $$TMP ${INSTAPP}/Desc
 endif        
 ifneq (,$(filter !Run,${INSTAPP_VERSION}))
-	TMP=`mktemp`; ${INSERTVERSION} obeymode=1 ${INSTAPP}/!Run${SUFFIX_OBEY} > $$TMP; mv $$TMP ${INSTAPP}/!Run${SUFFIX_OBEY}
+	TMP=`mktemp` && ${INSERTVERSION} obeymode=1 ${INSTAPP}/!Run${SUFFIX_OBEY} > $$TMP && mv $$TMP ${INSTAPP}/!Run${SUFFIX_OBEY}
 endif
 	@${ECHO} ${COMPONENT}: application installation complete
 
