@@ -28,7 +28,6 @@ CompressPNG           -type EXP
 DDEUtils              -type EXP
 Econet                -type EXP
 FileCore              -type EXP
-DDT                   -type EXP
 HostFS                -type EXP
 SATADriver            -type EXP
 SCSIDriver            -type EXP
@@ -36,8 +35,7 @@ SCSIFS                -type EXP # After FileCore to allow FileCoreErr generation
 PCCardFS              -type EXP
 PCI                   -type EXP
 PDriver               -type EXP
-PDumperDM             -type EXP
-MakePSFont            -type EXP
+Portable              -type EXP
 VFPSupport            -type EXP
 
 # Kernel is first module in ROM seen as the UtilityModule
@@ -197,10 +195,6 @@ DDTLib
 Wild
 Trace
 DebugLib
-
-NVRAM                 -type EXP
-PortManager           -type EXP
-Portable              -type EXP
 
 ABRelease
 
