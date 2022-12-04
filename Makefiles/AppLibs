@@ -49,6 +49,7 @@ INETLIB   = TCPIPLibs:o.inetlib
 UNIXLIB   = TCPIPLibs:o.unixlib
 XOLIB     = TCPIPLibs:o.xolib
 RPCLIB    = TCPIPLibs:rpc.o.rpc_data TCPIPLibs:rpc.o.rpclib
+RPC5LIB   = TCPIPLibs:rpc.o.rpc_data TCPIPLibs:rpc.o.rpclib5
 CRYPTLIB  = C:SSLeay.o.ssl C:SSLeay.o.libcrypto
 MBEDTLSLIB = C:mbedTLS.o.mbedTLS
 
