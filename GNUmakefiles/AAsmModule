@@ -125,7 +125,7 @@ RES_FILES_    = ${INSTROM_FILES}
 RES_DEPENDS_  = ${INSTROM_DEPENDS}
 endif
 
-SOURCES_TO_SYMLINK += $(wildcard h/*) $(wildcard hdr/*) $(wildcard s/*) Resources VersionNum VersionASM
+SOURCES_TO_SYMLINK += $(wildcard h/*) $(wildcard hdr/*) $(wildcard s/*) VersionNum VersionASM
 
 ifeq ("${INCLUDED_STDTOOLS}","")
 include StdTools

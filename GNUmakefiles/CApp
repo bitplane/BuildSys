@@ -109,7 +109,7 @@ APP_OBJS_     = $(addsuffix .o,${APP_OBJS})
 DBG_OBJS_     = $(addsuffix .od,${DBG_OBJS})
 ROM_OBJS_     = $(addsuffix .oz,${ROM_OBJS})
 
-SOURCES_TO_SYMLINK += $(wildcard c/*) $(wildcard c++/*) $(wildcard h/*) $(wildcard s/*) VersionNum VersionASM
+SOURCES_TO_SYMLINK += $(wildcard c/*) $(wildcard c++/*) $(wildcard h/*) $(wildcard hdr/*) $(wildcard s/*) VersionNum VersionASM
 
 ifeq ("${INCLUDED_STDTOOLS}","")
 ifeq ("${INCLUDED_HOSTTOOLS}","")

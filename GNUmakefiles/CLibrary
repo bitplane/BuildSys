@@ -119,7 +119,7 @@ else
 EXPDIR       ?= ${INSTDIR}/${TARGET}
 endif
 
-SOURCES_TO_SYMLINK += $(wildcard c/*) $(wildcard h/*) $(wildcard s/*)
+SOURCES_TO_SYMLINK += $(wildcard c/*) $(wildcard c++/*) $(wildcard h/*) $(wildcard hdr/*) $(wildcard s/*) VersionNum VersionASM
 
 ifeq ("${INCLUDED_STDTOOLS}","")
 include StdTools
