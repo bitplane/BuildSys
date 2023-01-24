@@ -1,21 +1,21 @@
-/* (7.81)
+/* (7.82)
  *
  * This file is automatically maintained by srccommit, do not edit manually.
  *
  */
-#define Module_MajorVersion_CMHG        7.81
+#define Module_MajorVersion_CMHG        7.82
 #define Module_MinorVersion_CMHG
-#define Module_Date_CMHG                28 Jan 2023
+#define Module_Date_CMHG                20 Feb 2023
 
-#define Module_MajorVersion             "7.81"
-#define Module_Version                  781
+#define Module_MajorVersion             "7.82"
+#define Module_Version                  782
 #define Module_MinorVersion             ""
-#define Module_Date                     "28 Jan 2023"
+#define Module_Date                     "20 Feb 2023"
 
-#define Module_ApplicationDate          "28-Jan-23"
+#define Module_ApplicationDate          "20-Feb-23"
 
 #define Module_ComponentName            "BuildSys"
 
-#define Module_FullVersion              "7.81"
-#define Module_HelpVersion              "7.81 (28 Jan 2023)"
-#define Module_LibraryVersionInfo       "7:81"
+#define Module_FullVersion              "7.82"
+#define Module_HelpVersion              "7.82 (20 Feb 2023)"
+#define Module_LibraryVersionInfo       "7:82"
