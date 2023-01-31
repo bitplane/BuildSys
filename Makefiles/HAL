@@ -24,8 +24,8 @@ INCLUDED_HAL = YES
 
 HDRS       =
 CMHGFILE   =
-CUSTOMRES  = custom
-CUSTOMROM  = custom
+CUSTOMRES ?= no
+CUSTOMROM ?= hal
 ROM_TARGET = custom
 LNK_TARGET = custom
 AIFDBG     = aif._${TARGET}
@@ -33,16 +33,13 @@ GPADBG     = gpa.GPA
 
 include CModule
 
-resources:
-	@${ECHO} ${COMPONENT}: no resources
-
-rom: aof.${TARGET}
+rom_hal: aof.${TARGET}
 	@${ECHO} ${COMPONENT}: HAL built
 
 _debug: ${GPADBG}
 	@${ECHO} ${COMPONENT}: debug image built
 
-install_rom: linked.${TARGET}
+install_rom_hal: linked.${TARGET}
 	${CP} linked.${TARGET} ${INSTDIR}.${TARGET} ${CPFLAGS}
 	@${ECHO} ${COMPONENT}: HAL installed
 

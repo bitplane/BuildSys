@@ -63,9 +63,7 @@ INCLUDED_CMODULE = YES
 # CUSTOMEXP    (opt) (set to "custom" to override the export rules)
 # CUSTOMRES    (opt) (set to "custom" to override the resources rules, or "no" for no resources)
 # CUSTOMROM    (opt) (set to "custom" to override the rom rules)
-# CUSTOMSA     (opt) (set to "custom" to override the standalone rules)
-# CUSTOMDBG    (opt) (set to "custom" to override the debug rules)
-# CUSTOMGPA    (opt) (set to "custom" to override the GPA rules)
+# CUSTOMSA     (opt) (set to "custom" to override the standalone, install, debug and gpa_debug rules)
 # RAMCDEFINES  (opt) (additions to CDEFINES for RAM builds - requires ModStdRule to be included later)
 # ROMCDEFINES  (opt) (additions to CDEFINES for ROM builds - requires ModStdRule to be included later)
 # RAMASMDEFINES (opt) (additions to ASMDEFINES for RAM builds, defaulting to standalone and MergedMsgs - requires ModStdRule to be included later)
@@ -295,10 +293,10 @@ ${DIRS}:
 #
 # Export phases
 #
-export${CUSTOMEXP}: export_${PHASE}
+export: export_${PHASE}_${CUSTOMEXP}
 	@${NOP}
 
-export_: export_hdrs export_libs
+export__${CUSTOMEXP}: export_hdrs_${CUSTOMEXP} export_libs_${CUSTOMEXP}
 	@${NOP}
 
 create_exp_hdr_dirs:
@@ -344,22 +342,29 @@ endif
 .hdr.expasm:;  ${CP} $< ${EXP_HDR}/$*
 .hdr.expasmc:; ${HDR2H} $< ${C_EXP_HDR}/$*.h
 
-export_hdrs${CUSTOMEXP}: create_exp_hdr_dirs ${DIRS} ${EXPORTING_HDRS} ${EXPORTING_ASMHDRS} ${EXPORTING_ASMCHDRS}
+export_hdrs: export_hdrs_${CUSTOMEXP}
+	@${NOP}
+
+export_hdrs_: create_exp_hdr_dirs ${DIRS} ${EXPORTING_HDRS} ${EXPORTING_ASMHDRS} ${EXPORTING_ASMCHDRS}
 	@${ECHO} ${COMPONENT}: header export complete
 
-export_libs${CUSTOMEXP}:
+export_libs: export_libs_${CUSTOMEXP}
+	@${NOP}
+
+export_libs_:
 	@${ECHO} ${COMPONENT}: no exported libraries
 
 #
 # Resources rules
 #
-resources${CUSTOMRES}:: resources-${CMDHELP}
+resources: resources_${CUSTOMRES}
+	@${NOP}
+
+resources_: resources-${CMDHELP}
 	@${ECHO} ${COMPONENT}: resources copied to Messages module
 
-ifeq (${CUSTOMRES},no)
-resources:
+resources_no:
 	@${ECHO} ${COMPONENT}: no resources to export
-endif        
 
 resources_extra: ${RES_DEPENDS_}
 ifneq (${RES_FILES_},)
@@ -410,10 +415,16 @@ endif
 #
 # ROM build rules
 #
-rom${CUSTOMROM}: ${ROM_TARGET}.aof
+rom: rom_${CUSTOMROM}
+	@${NOP}
+
+rom_: ${ROM_TARGET}.aof
 	@${ECHO} ${COMPONENT}: rom module built
 
-rom_link${CUSTOMROM}: ${LNK_TARGET}.linked
+rom_link: rom_link_${CUSTOMROM}
+	@${NOP}
+
+rom_link_: ${LNK_TARGET}.linked
 	${CP} ${LNK_TARGET}.linked ${LINKDIR}/${TARGET}
 	${CP} ${LNK_TARGET}_sym.linked ${LINKDIR}/${TARGET}_sym
 	@${ECHO} ${COMPONENT}: rom_link complete
@@ -427,18 +438,30 @@ ${LNK_TARGET}.linked: ${FORCEROMLINK} ${ROM_SYMS} ${ROM_TARGET}.aof
 #
 # Standalone rules
 #
-install${CUSTOMSA}: ${SA_TARGET}${SUFFIX_MODULE}
+install: install_${CUSTOMSA}
+	@${NOP}
+
+install_: ${SA_TARGET}${SUFFIX_MODULE}
 	${MKDIR} ${INSTDIR}
 	${CP} ${SA_TARGET}${SUFFIX_MODULE} ${INSTDIR}/${TARGET}${SUFFIX_MODULE}
 	@${ECHO} ${COMPONENT}: ram module installed
 
-standalone${CUSTOMSA}: ${SA_TARGET}${SUFFIX_MODULE}
+standalone: standalone_${CUSTOMSA}
+	@${NOP}
+
+standalone_: ${SA_TARGET}${SUFFIX_MODULE}
 	@${ECHO} ${COMPONENT}: ram module built
 
-debug${CUSTOMDBG}: ${DBG_TARGET}${SUFFIX_MODULE}
+debug: debug_${CUSTOMSA}
+	@${NOP}
+
+debug_: ${DBG_TARGET}${SUFFIX_MODULE}
 	@${ECHO} ${COMPONENT}: debug module built
 
-gpa_debug${CUSTOMGPA}: ${GPA_TARGET}.gpa
+gpa_debug: gpa_debug_${CUSTOMSA}
+	@${NOP}
+
+gpa_debug_: ${GPA_TARGET}.gpa
 	@${ECHO} ${COMPONENT}: GPA debug built
 
 prepro: ${DIRS} ${PP_OBJS_}

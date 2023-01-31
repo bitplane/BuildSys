@@ -64,9 +64,7 @@ INCLUDED_AASMMODULE = YES
 # CUSTOMEXP       (opt) (set to "custom" to override the export rules)
 # CUSTOMRES       (opt) (set to "custom" to override the resources rules, or "no" for no resources)
 # CUSTOMROM       (opt) (set to "custom" to override the rom rules)
-# CUSTOMSA        (opt) (set to "custom" to override the standalone rules)
-# CUSTOMDBG       (opt) (set to "custom" to override the debug rules)
-# CUSTOMGPA       (opt) (set to "custom" to override the GPA rules)
+# CUSTOMSA        (opt) (set to "custom" to override the standalone, install, debug and gpa_debug rules)
 #
 #
 # It relies on the following from the build system:
@@ -178,15 +176,24 @@ ${DIRS} ::
 #
 # ROM build rules
 #
-rom${CUSTOMROM}: ${ROM_MODULE}
+rom: rom_${CUSTOMROM}
+        @${NOP}
+
+rom_: ${ROM_MODULE}
         @${ECHO} ${COMPONENT}: rom module built
 
-install_rom${CUSTOMROM}: ${ROM_MODULE}
+install_rom: install_rom_${CUSTOMROM}
+        @${NOP}
+
+install_rom_: ${ROM_MODULE}
         ${CP} ${ROM_MODULE} ${INSTDIR}.${TARGET} ${CPFLAGS}
         ${CP} ${ROM_MODULE}_gpa ${INSTDIR}.${TARGET}_gpa ${CPFLAGS}
         @${ECHO} ${COMPONENT}: rom module installed
 
-rom_link${CUSTOMROM}: ${ROM_MODULE}
+rom_link: rom_link_${CUSTOMROM}
+        @${NOP}
+
+rom_link_: ${ROM_MODULE}
         ${LD} -rmf -o ${LINKDIR}.${TARGET} ${ROM_OBJECT} ${ROM_LIBS} -Symbols ${LINKDIR}.${TARGET}_sym -base ${ADDRESS}
         @${ECHO} ${COMPONENT}: rom_link complete
 
@@ -201,7 +208,10 @@ ${ROM_OBJECT}: ${ROM_SOURCE} ${TOKHELPSRC} ${DIRS}
 #
 # Standalone builds
 #
-standalone${CUSTOMSA}: ${SA_MODULE}
+standalone: standalone_${CUSTOMSA}
+        @${NOP}
+
+standalone_: ${SA_MODULE}
         @${ECHO} ${COMPONENT}: standalone module built
 
 ${SA_MODULE}: ${SA_OBJECT} ${SA_LIBS} ${DIRS} ${SA_DEPEND}
@@ -223,13 +233,19 @@ ${MERGEDMSGS}::
         @${NOP}
 endif
 
-install${CUSTOMSA}: ${SA_MODULE}
+install: install_${CUSTOMSA}
+        @${NOP}
+
+install_: ${SA_MODULE}
         ${MKDIR} ${INSTDIR}
         ${CP} ${SA_MODULE} ${INSTDIR}.${TARGET} ${CPFLAGS}
         ${CHMOD} a=rx $@
         @${ECHO} ${COMPONENT}: standalone module installed
 
-debug${CUSTOMDBG}: ${DBG_MODULE}
+debug: debug_${CUSTOMSA}
+        @${NOP}
+
+debug_: ${DBG_MODULE}
         @${ECHO} ${COMPONENT}: standalone debug module built
 
 ${DBG_MODULE}: ${DBG_OBJECT} ${DBG_LIBS} ${DIRS} ${SA_DEPEND}
@@ -238,7 +254,10 @@ ${DBG_MODULE}: ${DBG_OBJECT} ${DBG_LIBS} ${DIRS} ${SA_DEPEND}
 ${DBG_OBJECT}: ${ROM_SOURCE} ${MERGEDMSGS} ${TOKHELPSRC} ${DIRS}
         ${AS} ${ASFLAGS} ${ASDFLAGS} -g -pd "debugging SETL {TRUE}" -o $@ ${ROM_SOURCE} ${SA_FLAGS}
 
-gpa_debug${CUSTOMGPA}: ${GPA_FILE}
+gpa_debug: gpa_debug_${CUSTOMSA}
+        @${NOP}
+
+gpa_debug_: ${GPA_FILE}
         @${ECHO} ${COMPONENT}: GPA debug listing generated
 
 ${GPA_FILE}: ${GPA_AIF}
@@ -271,7 +290,16 @@ clean ::
 #
 # Export phases
 #
-export_hdrs: ${EXPORTS}
+export: export_${PHASE}_${CUSTOMEXP}
+        @${NOP}
+
+export__${CUSTOMEXP}: export_libs_${CUSTOMEXP} export_hdrs_${CUSTOMEXP}
+        @${NOP}
+
+export_hdrs: export_hdrs_${CUSTOMEXP}
+        @${NOP}
+
+export_hdrs_: ${EXPORTS}
         @If "${HEADER1}"<>"" Then ${ECHO} ${CP} hdr.${HEADER1} ${EXP_HDR}.${HEADER1} ${CPFLAGS}
         @If "${HEADER1}"<>"" Then ${CP} hdr.${HEADER1} ${EXP_HDR}.${HEADER1} ${CPFLAGS}
         @If "${HEADER2}"<>"" Then ${ECHO} ${CP} hdr.${HEADER2} ${EXP_HDR}.${HEADER2} ${CPFLAGS}
@@ -306,14 +334,11 @@ export_hdrs: ${EXPORTS}
         @If "${HEADER16}"<>"" Then ${CP} hdr.${HEADER16} ${EXP_HDR}.${HEADER16} ${CPFLAGS}
         @${ECHO} ${COMPONENT}: header export complete
 
-export_libs:
-        @${ECHO} ${COMPONENT}: library export complete
+export_libs: export_libs_${CUSTOMEXP}
+        @${NOP}
 
-export${CUSTOMEXP}: export_${PHASE}
-        @${NOP}
-        
-export_:: export_libs export_hdrs
-        @${NOP}
+export_libs_:
+        @${ECHO} ${COMPONENT}: library export complete
 
 ${C_EXP_HDR}.${ASMCHEADER1} :: hdr.${ASMCHEADER1}
         ${HDR2H} hdr.${ASMCHEADER1} $@
@@ -351,13 +376,14 @@ ${C_EXP_HDR}.${CHEADER3} :: h.${CHEADER3}
 #
 # Resources rules
 #
-resources${CUSTOMRES}:: resources-${CMDHELP}
+resources: resources_${CUSTOMRES}
+        @${NOP}
+
+resources_: resources-${CMDHELP}
         @${ECHO} ${COMPONENT}: resources copied to Messages module
 
-ifeq (${CUSTOMRES},no)
-resources:
+resources_no:
         @${ECHO} ${COMPONENT}: no resources to export
-endif        
 
 resources_extra: ${RES_DEPENDS_}
 ifneq (${RES_FILES_},)

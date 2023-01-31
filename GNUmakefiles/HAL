@@ -10,8 +10,8 @@ INCLUDED_HAL = YES
 
 HDRS       =
 CMHGFILE   =
-CUSTOMRES  = custom
-CUSTOMROM  = custom
+CUSTOMRES ?= no
+CUSTOMROM ?= hal
 ROM_TARGET = custom
 LNK_TARGET = custom
 AIFDBG     = _${TARGET}.aif
@@ -30,16 +30,13 @@ else
 
 # Makefile invoked from objs subdirectory
 
-resources:
-	@${ECHO} ${COMPONENT}: no resources
-
-rom: ${TARGET}.aof
+rom_hal: ${TARGET}.aof
 	@${ECHO} ${COMPONENT}: HAL built
 
 _debug: ${GPADBG}
 	@${ECHO} ${COMPONENT}: debug image built
 
-install_rom: ${TARGET}.linked
+install_rom_hal: ${TARGET}.linked
 	${CP} ${TARGET}.linked ${INSTDIR}/${TARGET}
 	@${ECHO} ${COMPONENT}: HAL installed
 

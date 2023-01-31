@@ -143,10 +143,16 @@ ifneq (,$(filter Messages,${INSTAPP_VERSION}))
 endif
 	@${ECHO} ${COMPONENT}: resources copied to Messages module
 
-rom${CUSTOMROM}: ${ROM_MODULE}
+rom: rom_${CUSTOMROM}
+	@${NOP}
+
+rom$_: ${ROM_MODULE}
 	@${ECHO} ${COMPONENT}: rom module built
 
-install_rom${CUSTOMROM}: ${ROM_MODULE}
+install_rom: install_rom_${CUSTOMROM}
+	@${NOP}
+
+install_rom_: ${ROM_MODULE}
 	${CP} ${ROM_MODULE} ${INSTDIR}/${COMPONENT}${SUFFIX_MODULE} ${CPFLAGS}
 	@${ECHO} ${COMPONENT}: rom module installed
 
@@ -172,10 +178,19 @@ include $(wildcard *.d)
 
 endif
 
-export${CUSTOMEXP}: export_${PHASE}
+export: export_${PHASE}_${CUSTOMEXP}
 	@${NOP}
 
-export_ export_hdrs export_libs:
+export__${CUSTOMEXP}: export_hdrs_${CUSTOMEXP} export_libs_${CUSTOMEXP}
+	@${NOP}
+
+export_hdrs: export_hdrs_${CUSTOMEXP}
+	@${NOP}
+
+export_libs: export_libs_${CUSTOMEXP}
+	@${NOP}
+
+export_hdrs_ export_libs_:
 	@${NOP}
 
 # EOF

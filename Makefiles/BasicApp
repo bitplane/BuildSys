@@ -132,10 +132,16 @@ ifneq (,$(filter Messages,${INSTAPP_VERSION}))
 endif
         @${ECHO} ${COMPONENT}: resources copied to Messages module
 
-rom${CUSTOMROM}: ${ROM_MODULE}
+rom: rom_${CUSTOMROM}
+        @${NOP}
+
+rom_: ${ROM_MODULE}
         @${ECHO} ${COMPONENT}: rom module built
 
-install_rom${CUSTOMROM}: ${ROM_MODULE}
+install_rom: install_rom_${CUSTOMROM}
+        @${NOP}
+
+install_rom_: ${ROM_MODULE}
         ${CP} ${ROM_MODULE} ${INSTDIR}.${COMPONENT} ${CPFLAGS}
         @${ECHO} ${COMPONENT}: rom module installed
 

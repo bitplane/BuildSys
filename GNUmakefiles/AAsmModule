@@ -49,9 +49,7 @@ INCLUDED_AASMMODULE = YES
 # CUSTOMEXP       (opt) (set to "custom" to override the export rules)
 # CUSTOMRES       (opt) (set to "custom" to override the resources rules, or "no" for no resources)
 # CUSTOMROM       (opt) (set to "custom" to override the rom rules)
-# CUSTOMSA        (opt) (set to "custom" to override the standalone rules)
-# CUSTOMDBG       (opt) (set to "custom" to override the debug rules)
-# CUSTOMGPA       (opt) (set to "custom" to override the GPA rules)
+# CUSTOMSA        (opt) (set to "custom" to override the standalone, install, debug and gpa_debug rules)
 # SOURCES_TO_SYMLINK opt) (files which need be linked to by the link farm, in addition to contents of hdr and s directories)
 #
 #
@@ -189,15 +187,24 @@ ${DIRS}:
 #
 # ROM build rules
 #
-rom${CUSTOMROM}: ${ROM_MODULE}
+rom: rom_${CUSTOMROM}
+	@${NOP}
+
+rom_: ${ROM_MODULE}
 	@${ECHO} ${COMPONENT}: rom module built
 
-install_rom${CUSTOMROM}: ${ROM_MODULE}
+install_rom: install_rom_${CUSTOMROM}
+	@${NOP}
+
+install_rom_: ${ROM_MODULE}
 	${CP} ${ROM_MODULE} ${INSTDIR}/${TARGET} ${CPFLAGS}
 	#${CP} ${ROM_MODULE}_gpa ${INSTDIR}/${TARGET}_gpa ${CPFLAGS}
 	@${ECHO} ${COMPONENT}: rom module installed
 
-rom_link${CUSTOMROM}: ${ROM_MODULE}
+rom_link: rom_link_${CUSTOMROM}
+	@${NOP}
+
+rom_link_: ${ROM_MODULE}
 ifeq (GNU,${TOOLCHAIN})
 	${CP} ${ROM_MODULE} ${LINKDIR}/${TARGET} ${CPFLAGS}
 else
@@ -220,7 +227,10 @@ ${ROM_OBJECT}: ${DIRS} ${TOKHELPSRC} ${ROM_SOURCE}
 #
 # Standalone builds
 #
-standalone${CUSTOMSA}: ${SA_MODULE}
+standalone: standalone_${CUSTOMSA}
+	@${NOP}
+
+standalone_: ${SA_MODULE}
 	@${ECHO} ${COMPONENT}: standalone module built
 
 ${SA_MODULE}: ${SA_DEPEND} ${DIRS} ${SA_LIBS} ${SA_OBJECT}
@@ -248,12 +258,18 @@ ${MERGEDMSGS}::
 	@${NOP}
 endif
 
-install${CUSTOMSA}: ${SA_MODULE}
+install: install_${CUSTOMSA}
+	@${NOP}
+
+install_: ${SA_MODULE}
 	${MKDIR} ${INSTDIR}
 	${CP} ${SA_MODULE} ${INSTDIR}/${TARGET}${SUFFIX_MODULE} ${CPFLAGS}
 	@${ECHO} ${COMPONENT}: standalone module installed
 
-debug${CUSTOMDBG}: ${DBG_MODULE}
+debug: debug_${CUSTOMSA}
+	@${NOP}
+
+debug_: ${DBG_MODULE}
 	@${ECHO} ${COMPONENT}: standalone debug module built
 
 ${DBG_MODULE}: ${DBG_OBJECT} ${DBG_LIBS} ${DIRS} ${SA_DEPEND}
@@ -266,7 +282,10 @@ endif
 ${DBG_OBJECT}: ${ROM_SOURCE} ${MERGEDMSGS} ${TOKHELPSRC} ${DIRS}
 	${AS} ${ASFLAGS} ${ASDFLAGS} -g -pd "debugging SETL {TRUE}" -depend $(subst .o,.d,$@) -o $@ ${ROM_SOURCE} ${SA_FLAGS}
 
-#gpa_debug${CUSTOMGPA}: ${GPA_FILE}
+#gpa_debug: gpa_debug_${CUSTOMSA}
+#	@${NOP}
+#
+#gpa_debug_: ${GPA_FILE}
 #	@${ECHO} ${COMPONENT}: GPA debug listing generated
 #
 #${GPA_FILE}: ${GPA_AIF}
@@ -279,7 +298,16 @@ ${DBG_OBJECT}: ${ROM_SOURCE} ${MERGEDMSGS} ${TOKHELPSRC} ${DIRS}
 # Export phases
 #
 
-export_hdrs: ${EXPORTS}
+export: export_${PHASE}_${CUSTOMEXP}
+	@${NOP}
+
+export__${CUSTOMEXP}: export_hdrs_${CUSTOMEXP} export_libs_${CUSTOMEXP}
+	@${NOP}
+
+export_hdrs: export_hdrs_${CUSTOMEXP}
+	@${NOP}
+
+export_hdrs_: ${EXPORTS}
 	@if [ -e ${HEADER1}.hdr ]; then ${ECHO} ${CP} ${HEADER1}.hdr ${EXP_HDR}/${HEADER1} ${CPFLAGS}; fi
 	@if [ -e ${HEADER1}.hdr ]; then ${CP} ${HEADER1}.hdr ${EXP_HDR}/${HEADER1} ${CPFLAGS}; fi
 	@if [ -e ${HEADER2}.hdr ]; then ${ECHO} ${CP} ${HEADER2}.hdr ${EXP_HDR}/${HEADER2} ${CPFLAGS}; fi
@@ -314,14 +342,11 @@ export_hdrs: ${EXPORTS}
 	@if [ -e ${HEADER16}.hdr ]; then ${CP} ${HEADER16}.hdr ${EXP_HDR}/${HEADER16} ${CPFLAGS}; fi
 	@${ECHO} ${COMPONENT}: header export complete
 
-export_libs:
+export_libs: export_libs_${CUSTOMEXP}
+	@${NOP}
+
+export_libs_:
 	@${ECHO} ${COMPONENT}: library export complete
-
-export${CUSTOMEXP}: export_${PHASE}
-	@${NOP}
-
-export_:: export_hdrs export_libs
-	@${NOP}
 
 # Need these to stop complaints about the rules below
 ASMCHEADER1 ?= _!_x_!_
@@ -372,13 +397,14 @@ ${C_EXP_HDR}/${CHEADER3}.h :: ${CHEADER3}.h
 #
 # Resources
 #
-resources${CUSTOMRES}:: resources-${CMDHELP}
+resources: resources_${CUSTOMRES}
+	@${NOP}
+
+resources_: resources-${CMDHELP}
 	@${ECHO} ${COMPONENT}: resources copied to Messages module
 
-ifeq (${CUSTOMRES},no)
-resources:
+resources_no:
 	@${ECHO} ${COMPONENT}: no resources to export
-endif        
 
 resources_extra: ${RES_DEPENDS_}
 ifneq (${RES_FILES_},)

@@ -235,10 +235,16 @@ ifneq (,$(filter Messages,${INSTAPP_VERSION}))
 endif
         @${ECHO} ${COMPONENT}: resources copied to Messages module
 
-rom${CUSTOMROM}: aof.${ROM_TARGET}
+rom: rom_${CUSTOMROM}
+        @${NOP}
+
+rom_: aof.${ROM_TARGET}
         @${ECHO} ${COMPONENT}: rom module built
 
-rom_link${CUSTOMROM}: linked.${LNK_TARGET}
+rom_link: rom_link_${CUSTOMROM}
+        @${NOP}
+
+rom_link_: linked.${LNK_TARGET}
         ${CP} linked.${LNK_TARGET} ${LINKDIR}.${COMPONENT} ${CPFLAGS}
         ${CP} linked.${LNK_TARGET}_sym ${LINKDIR}.${COMPONENT}_sym ${CPFLAGS}
         @${ECHO} ${COMPONENT}: rom_link complete
