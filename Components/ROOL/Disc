@@ -335,7 +335,7 @@ HForm                   -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.Cauti
 DesktopBoot             -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.Caution TARGET= COMPONENT=ResetBoot
 PatchesPatch            -options INSTDIR=<Install$Dir>.HardDisc4.Utilities
 ShowScrap               -options INSTDIR=<Install$Dir>.HardDisc4.Utilities
-SparkFS                 -options INSTDIR=<Install$Dir>.HardDisc4.Utilities
+SparkFSCompressors      -options INSTDIR=<Install$Dir>.HardDisc4.Utilities
 Usage                   -options INSTDIR=<Install$Dir>.HardDisc4.Utilities
 T1ToFont                -options INSTDIR=<Install$Dir>.HardDisc4.Utilities
 ChangeFSI               -options INSTDIR=<Install$Dir>.HardDisc4.Utilities

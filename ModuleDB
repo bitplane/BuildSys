@@ -64,6 +64,7 @@ SDIOLib                     C     Sources.Lib.SDIOLib
 ShareD                      EXP   Sources.Networking.AUN.Access.ShareFSBlob.ShareFS
 SMHCLib                     C     Sources.Lib.SMHCLib
 socklib                     EXP   Sources.Lib.TCPIPLibs.socklib
+SparkLib                    EXP   Sources.Lib.SparkLib
 SSLeay                      EXP   closed.RiscOS.Sources.Lib.SSLeay
 SSLRO                       EXP   closed.RiscOS.Sources.Networking.libs.SSLRO
 SyncLib                     EXP   Sources.Lib.SyncLib
@@ -563,6 +564,7 @@ SoundInput                  ASM   closed.RiscOS.Sources.HWSupport.SoundInput    
 SoundPlay                   C     closed.RiscOS.Sources.Audio.SoundPlay                                 Audio           SoundPlay
 SoundScheduler              ASM   Sources.HWSupport.Sound.Sound2                                        HWSupport       Sound2
 Spain                       ASM   Sources.Internat.Territory.TerritoryModule                            Internat        Spain
+SparkFS                     C     Sources.FileSys.ImageFS.SparkFS                                       FileSys         SparkFS
 SPIDriver                   C     Sources.HWSupport.SPIDriver                                           HWSupport       SPIDriver
 SprBounce                   RES   Sources.Video.UserI.ScrSavers.SprBounce                                   ThirdParty  !SprBounce
 SpriteExtend                ASM   Sources.Video.Render.SprExtend                                        Video           SprExtend
@@ -779,6 +781,7 @@ FormEd                      BAS   Sources.Apps.FormEd                           
 GateWay                     C     Sources.Networking.AUN.Apps.GateWay                                   Utilities       GateWay
 HForm                       BAS   Sources.Utilities.HForm                                               Utilities       HForm
 Hopper                      C     Sources.Apps.Diversions.Hopper                                        Apps            Hopper
+ImageFSFix                  ASM   Sources.Utilities.Patches.ImageFSFix                                  SystemRes       ImageFSFix
 InetRes                     RES   Sources.SystemRes.InetRes                                             SystemRes       Internet
 InetSetup                   C     Sources.SystemRes.InetSetup                                           SystemRes       InetSetup
 Madness                     BAS   Sources.Apps.Diversions.Madness                                       Apps            Madness
@@ -811,7 +814,8 @@ SciCalc                     BAS   Sources.Apps.SciCalc                          
 Scrap                       RES   Sources.SystemRes.Scrap                                               SystemRes       Scrap
 SDCreate                    RES   Sources.Utilities.SDCreate                                            Utilities       SDCreate
 ShowScrap                   RES   Sources.Utilities.ShowScrap                                           Utilities       ShowScrap
-SparkFS                     RES   Sources.Apps.SparkFSBin                                               ThirdParty      !SparkFS
+SparkFSApp                  C     Sources.Apps.SparkFSApp                                               Utilities       !SparkFS
+SparkFSCompressors          RES   Sources.Apps.SparkFSBin                                               Utilities       !SparkFS
 SquashApp                   C     Sources.Apps.SquashApp                                                Apps            Squash
 System                      RES   Sources.SystemRes.System                                              SystemRes       System
 T1ToFont                    C     Sources.Printing.T1ToFont                                             Printing        T1ToFont
