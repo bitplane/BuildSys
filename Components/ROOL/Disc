@@ -125,6 +125,7 @@ AsmUtils                -type EXP       # Lib.AsmUtils
 callx                   -type EXP       # Lib.callx
 zlib                    -type EXP       # Lib.zlib
 PRISMLib                -type EXP       # Lib.PRISMLib
+SparkLib                -type EXP       # Lib.SparkLib
 SyncLib                 -type EXP       # Lib.SyncLib
 SDIOLib                 -type EXP       # Lib.SDIOLib
 SMHCLib                 -type EXP       # Lib.SMHCLib
@@ -134,6 +135,7 @@ SMHCLib                 -type EXP       # Lib.SMHCLib
 #
 ConfigLib               -type EXP      # Lib.Configure
 Dialler                 -type EXP      # Networking.Modem.Dialler
+Fetchers                -type EXP      # Networking.Fetchers.Fetchers
 ImageLibPNG             -type EXP      # Lib.ImageLib
 ImageLibJPEG            -type EXP      # Lib.ImageLib
 ImageLib                -type EXP      # Lib.ImageLib
@@ -335,7 +337,11 @@ HForm                   -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.Cauti
 DesktopBoot             -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.Caution TARGET= COMPONENT=ResetBoot
 PatchesPatch            -options INSTDIR=<Install$Dir>.HardDisc4.Utilities
 ShowScrap               -options INSTDIR=<Install$Dir>.HardDisc4.Utilities
+SparkFSApp              -options INSTDIR=<Install$Dir>.HardDisc4.Utilities
 SparkFSCompressors      -options INSTDIR=<Install$Dir>.HardDisc4.Utilities
+SparkFS                 -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Resources
+ImageFSFix              -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Resources
+DesktopBoot             -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Resources TARGET= COMPONENT=IfThere
 Usage                   -options INSTDIR=<Install$Dir>.HardDisc4.Utilities
 T1ToFont                -options INSTDIR=<Install$Dir>.HardDisc4.Utilities
 ChangeFSI               -options INSTDIR=<Install$Dir>.HardDisc4.Utilities

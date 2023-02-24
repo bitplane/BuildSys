@@ -64,7 +64,7 @@ SDIOLib                     C     Sources.Lib.SDIOLib
 ShareD                      EXP   Sources.Networking.AUN.Access.ShareFSBlob.ShareFS
 SMHCLib                     C     Sources.Lib.SMHCLib
 socklib                     EXP   Sources.Lib.TCPIPLibs.socklib
-SparkLib                    EXP   Sources.Lib.SparkLib
+SparkLib                    C     Sources.Lib.SparkLib
 SSLeay                      EXP   closed.RiscOS.Sources.Lib.SSLeay
 SSLRO                       EXP   closed.RiscOS.Sources.Networking.libs.SSLRO
 SyncLib                     EXP   Sources.Lib.SyncLib
