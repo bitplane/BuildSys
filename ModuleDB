@@ -35,7 +35,7 @@ HTMLLib                     EXP   Sources.Lib.HTML
 ImageLib                    C     Sources.Lib.ImageLib
 ImageLibJPEG                C     Sources.Lib.ImageLib.JPEG
 ImageLibPNG                 C     Sources.Lib.ImageLib.PNG
-inetlib                     EXP   Sources.Lib.TCPIPLibs.inetlib
+inetlib                     C     Sources.Lib.TCPIPLibs.inetlib
 JSLib                       C     Sources.Lib.JSLib
 LDAPheaders                 EXP   closed.RiscOS.Sources.Networking.LDAP.include
 liblber                     C     closed.RiscOS.Sources.Networking.LDAP.liblber
@@ -59,11 +59,11 @@ PlainArgvLib                EXP   Sources.Lib.PlainArgv
 PRISMLib                    EXP   Sources.Lib.PRISMLib
 RemoteDebug                 C     Sources.Lib.remotedb
 RMVersion                   ASM   Sources.Programmer.RMVersion
-rpclib                      EXP   Sources.Lib.TCPIPLibs.rpclib.rpc
+rpclib                      C     Sources.Lib.TCPIPLibs.rpclib.rpc
 SDIOLib                     C     Sources.Lib.SDIOLib
 ShareD                      EXP   Sources.Networking.AUN.Access.ShareFSBlob.ShareFS
 SMHCLib                     C     Sources.Lib.SMHCLib
-socklib                     EXP   Sources.Lib.TCPIPLibs.socklib
+socklib                     C     Sources.Lib.TCPIPLibs.socklib
 SparkLib                    C     Sources.Lib.SparkLib
 SSLeay                      EXP   closed.RiscOS.Sources.Lib.SSLeay
 SSLRO                       EXP   closed.RiscOS.Sources.Networking.libs.SSLRO
@@ -74,7 +74,7 @@ ToolboxLib                  C     Sources.Toolbox.ToolboxLib
 Trace                       C     Sources.Lib.Trace
 Unicode                     RES   Sources.SystemRes.Unicode
 UnicodeLib                  C     Sources.Lib.UnicodeLib
-unixlib                     EXP   Sources.Lib.TCPIPLibs.unixlib
+unixlib                     C     Sources.Lib.TCPIPLibs.unixlib
 UtilLib                     C     Sources.Lib.UtilLib
 Wild                        C     Sources.Lib.Wild
 xolib                       EXP   Sources.Lib.TCPIPLibs.xolib

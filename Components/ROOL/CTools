@@ -75,21 +75,18 @@ RTC                     -type EXP
 # Libraries
 #
 SharedCLibrary          -options INSTDIR=Install:DDE.AcornC/C++.Export.<APCS>.Lib INSTTYPE=libraries
-TCPIPheaders            -type EXP
-inetlib                 -type EXP
-rpclib                  -type EXP
-socklib                 -type EXP
-unixlib                 -type EXP
 TCPIPheaders            -options INSTDIR=Install:DDE.AcornC/C++.Export.<APCS>.Lib
+inetlib                 -options INSTDIR=Install:DDE.AcornC/C++.Export.<APCS>.Lib
+rpclib                  -options INSTDIR=Install:DDE.AcornC/C++.Export.<APCS>.Lib
+socklib                 -options INSTDIR=Install:DDE.AcornC/C++.Export.<APCS>.Lib
+unixlib                 -options INSTDIR=Install:DDE.AcornC/C++.Export.<APCS>.Lib
 AsmUtils                -options INSTDIR=Install:DDE.AcornC/C++.Export.<APCS>.Lib
 C++Lib                  -options INSTDIR=Install:DDE.AcornC/C++.Export.<APCS>.Lib
 CLXLite                 -type EXP
 CLX                     -type EXP
-Common                  -type EXP
 DDTLib                  -options INSTDIR=Install:DDE.AcornC/C++.Export.<APCS>.Lib
 DeskLib                 -options INSTDIR=Install:DDE.AcornC/C++.Export.<APCS>.Lib
 ModMallocLib            -options INSTDIR=Install:DDE.AcornC/C++.Export.<APCS>.Lib
-NBLib                   -type EXP
 PDebug                  -options INSTDIR=Install:DDE.AcornC/C++.Export.<APCS>.Lib
 PlainArgvLib            -type EXP
 ToolboxLib              -options INSTDIR=Install:DDE.AcornC/C++.Export.<APCS>.Lib
