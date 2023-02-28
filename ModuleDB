@@ -564,7 +564,16 @@ SoundInput                  ASM   closed.RiscOS.Sources.HWSupport.SoundInput    
 SoundPlay                   C     closed.RiscOS.Sources.Audio.SoundPlay                                 Audio           SoundPlay
 SoundScheduler              ASM   Sources.HWSupport.Sound.Sound2                                        HWSupport       Sound2
 Spain                       ASM   Sources.Internat.Territory.TerritoryModule                            Internat        Spain
-SparkFS                     C     Sources.FileSys.ImageFS.SparkFS                                       FileSys         SparkFS
+SparkFS                     C     Sources.FileSys.ImageFS.SparkFS.SparkFS                               FileSys         SparkFS
+SparkARJ                    C     Sources.FileSys.ImageFS.SparkFS.Codecs.SparkARJ                       FileSys         SparkARJ
+SparkCab                    C     Sources.FileSys.ImageFS.SparkFS.Codecs.SparkCab                       FileSys         SparkCab
+SparkCPIO                   C     Sources.FileSys.ImageFS.SparkFS.Codecs.SparkCPIO                      FileSys         SparkCPIO
+SparkLzh                    C     Sources.FileSys.ImageFS.SparkFS.Codecs.SparkLzh                       FileSys         SparkLzh
+SparkPackdDir               C     Sources.FileSys.ImageFS.SparkFS.Codecs.SparkPackdDir                  FileSys         SparkPackdDir
+SparkSpark                  C     Sources.FileSys.ImageFS.SparkFS.Codecs.SparkSpark                     FileSys         SparkSpark
+SparkTar                    C     Sources.FileSys.ImageFS.SparkFS.Codecs.SparkTar                       FileSys         SparkTar
+SparkZip                    C     Sources.FileSys.ImageFS.SparkFS.Codecs.SparkZip                       FileSys         SparkZip
+SparkZoo                    C     Sources.FileSys.ImageFS.SparkFS.Codecs.SparkZoo                       FileSys         SparkZoo
 SPIDriver                   C     Sources.HWSupport.SPIDriver                                           HWSupport       SPIDriver
 SprBounce                   RES   Sources.Video.UserI.ScrSavers.SprBounce                                   ThirdParty  !SprBounce
 SpriteExtend                ASM   Sources.Video.Render.SprExtend                                        Video           SprExtend
