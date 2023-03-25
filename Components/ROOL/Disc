@@ -339,6 +339,12 @@ PatchesPatch            -options INSTDIR=<Install$Dir>.HardDisc4.Utilities
 ShowScrap               -options INSTDIR=<Install$Dir>.HardDisc4.Utilities
 SparkFSApp              -options INSTDIR=<Install$Dir>.HardDisc4.Utilities
 SparkFSCompressors      -options INSTDIR=<Install$Dir>.HardDisc4.Utilities
+SparkARJ                -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
+SparkCab                -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
+SparkCPIO               -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
+SparkPackdDir           -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
+SparkSpark              -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
+SparkTar                -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
 SparkFS                 -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Resources
 ImageFSFix              -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Resources
 DesktopBoot             -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Resources TARGET= COMPONENT=IfThere
