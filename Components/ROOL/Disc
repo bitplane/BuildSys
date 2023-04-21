@@ -345,6 +345,8 @@ SparkCPIO               -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!Spar
 SparkPackdDir           -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
 SparkSpark              -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
 SparkTar                -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
+SparkZip                -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
+SparkZoo                -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
 SparkFS                 -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Resources
 ImageFSFix              -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Resources
 DesktopBoot             -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Resources TARGET= COMPONENT=IfThere
