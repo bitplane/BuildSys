@@ -501,6 +501,7 @@ ROMFonts                    ASM   Sources.Video.Render.Fonts.ROMFonts           
 ROMpatchU                   C     closed.RiscOS.Sources.SystemRes.Patch2                                SystemRes       ROMpatchU
 RouteD                      C     Sources.Networking.AUN.RouteD                                         Networking      RouteD
 RPiFiles                    RES   Sources.SystemRes.RPiFiles                                            FileSys         RPiFiles
+RSound                      ASM   Sources.Audio.RSound                                                  Audio           RSound
 RTC                         C     Sources.HWSupport.RTC                                                 HWSupport       RTC
 RTCAdjust                   ASM   Sources.HWSupport.RTCAdjust                                           HWSupport       RTCAdjust
 RTSupport                   C     Sources.Programmer.RTSupport                                          Programmer      RTSupport
@@ -817,6 +818,7 @@ PMonitor                    C     Sources.Printing.Modules.PMonitor             
 Public                      RES   Sources.SystemRes.Public                                              SystemRes       Public
 Puzzle                      RES   Sources.Apps.Diversions.Puzzle                                        Apps            Puzzle
 QTheMusic                   RES   Sources.Audio.QTheMusic                                               ThirdParty      QTMModule
+RealTime                    BAS   Sources.Apps.RealTime                                                 Apps            RealTime
 ResApp                      RES   Sources.SystemRes.ResApp                                              SystemRes       !+Resource
 SaveCMOS                    RES   closed.RiscOS.Sources.Utilities.SaveCMOS                              Utilities       SaveCMOS
 SciCalc                     BAS   Sources.Apps.SciCalc                                                  Apps            SciCalc
