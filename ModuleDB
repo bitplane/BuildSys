@@ -88,6 +88,7 @@ zlibmodlib                  EXP   Sources.Lib.zlib
 AutoDemo                    RES   closed.RiscOS.Sources.Apps.AutoDemo
 Boot                        RES   closed.RiscOS.Sources.Apps.Boot
 BuildSys                    RES   BuildSys
+CToolsCD                    RES   closed.RiscOS.Sources.SystemRes.CToolsCD
 DDE                         RES   Sources.SystemRes.DDE
 DDETools                    RES   Library
 PrintDefs                   RES   Sources.Printing.PrintDefs
@@ -226,7 +227,6 @@ Contrast                    ASM   closed.RiscOS.Sources.SystemRes.STB.Utilities.
 CPUSpeed                    ASM   closed.RiscOS.Sources.SystemRes.STB.Utilities.CPUSpeed                SystemRes       CPUSpeed
 Cron                        ASM   closed.RiscOS.Sources.Programmer.Cron                                 Programmer      Cron
 CSFS                        C     closed.RiscOS.Sources.FileSys.CSFS                                    FileSys         CSFS
-CToolsCD                    RES   closed.RiscOS.Sources.SystemRes.CToolsCD                              SystemRes       !Instal_CC
 CtrlsModem                  C     closed.RiscOS.Sources.Networking.Modem.CtrlsModem                     Networking      CtrlsModem
 DADebug                     ASM   Sources.Programmer.DADebug                                            Programmer      DADebug
 DCS_Quit                    C     Sources.Toolbox.DCS                                                   Toolbox         DCS
@@ -343,6 +343,7 @@ IRQUtils2                   ASM   Sources.Utilities.Patches.IRQUtils2           
 IRRemote                    C     closed.RiscOS.Sources.HWSupport.IRRemote                              HWSupport       IRRemote
 ITable                      ASM   Sources.Video.Render.Fonts.ITable                                     Video           ITable
 Italy                       ASM   Sources.Internat.Territory.TerritoryModule                            Internat        Italy
+IZipFS                      ASM   Sources.FileSys.IZipFS.IZipFS                                         FileSys         IZipFS
 Japan                       ASM   Sources.Internat.Territory.TerritoryModule                            Internat        Japan
 JCompMod                    C     Sources.Video.Render.JCompMod                                         Video           JCompMod
 Joystick                    ASM   Sources.HWSupport.Joystick                                            HWSupport       Joystick
@@ -464,7 +465,7 @@ PortableHAL                 ASM   Sources.HWSupport.PortableHAL                 
 PortManager                 C     Sources.HWSupport.PortMan                                             HWSupport       PortMan
 Portugal                    ASM   Sources.Internat.Territory.TerritoryModule                            Internat        Portugal
 PowerOn                     ASM   closed.RiscOS.Sources.Programmer.PowerOn                              Programmer      PowerOn
-PPADriverJ                  ASM   closed.RiscOS.Sources.HWSupport.PPADriverJ                            HWSupport       PPADriverJ
+PPADriverJ                  ASM   RiscOS.Sources.HWSupport.PPADriverJ                                   HWSupport       PPADriverJ
 PPP                         C     Sources.Networking.Modem.PPP                                          Networking      PPP
 PPrimer                     C     Sources.Printing.PPrimer                                              Printing        PPrimer
 PrintDbox                   C     Sources.Toolbox.PrintDbox                                             Toolbox         PrintDbox

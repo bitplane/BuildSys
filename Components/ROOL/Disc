@@ -342,6 +342,7 @@ SparkFSCompressors      -options INSTDIR=<Install$Dir>.HardDisc4.Utilities
 SparkARJ                -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
 SparkCab                -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
 SparkCPIO               -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
+SparkLzh                -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
 SparkPackdDir           -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
 SparkSpark              -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
 SparkTar                -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules

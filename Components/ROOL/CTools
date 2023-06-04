@@ -119,6 +119,7 @@ FPEmulator              -options INSTDIR=Install:DDE.AcornC/C++.Developer.!Syste
 FrontEnd                -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules
 Config2Installer        -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules CMDHELP=None
 Config2Installer        -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.360.Modules
+BootCommands            -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules CMDHELP=None
 ColourPicker            -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules OPTIONS="-DNO_INTERNATIONAL_HELP"
 RedrawManager           -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules
 TaskWindow              -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules MACHINE=Archimedes CMDHELP=None
