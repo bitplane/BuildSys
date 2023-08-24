@@ -36,7 +36,7 @@ rom_hal: ${TARGET}.aof
 _debug: ${GPADBG}
 	@${ECHO} ${COMPONENT}: debug image built
 
-install_rom_hal: ${TARGET}.linked
+install_rom: ${TARGET}.linked
 	${CP} ${TARGET}.linked ${INSTDIR}/${TARGET}
 	@${ECHO} ${COMPONENT}: HAL installed
 
