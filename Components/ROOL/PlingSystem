@@ -102,6 +102,7 @@ DebugLib                -type EXP
 #
 # 26 bit only
 #
+310Support              -options INSTDIR=<Install$Dir>.System.!System.310.Modules.310Support
 BorderUtils             -options INSTDIR=<Install$Dir>.System.!System.310.Modules
 CallASWI                -options INSTDIR=<Install$Dir>.System.!System.310.Modules
 CMOSUtils               -options INSTDIR=<Install$Dir>.System.!System.310.Modules
