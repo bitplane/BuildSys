@@ -11,7 +11,7 @@
 #--------------------------------------------------------------------------------------------------------------------------------------
 ABCLib                      EXP   closed.RiscOS.Sources.Lib.ABCLib
 AcornNCLib                  EXP   Sources.Lib.AcornNC
-ARLib                       C     closed.RiscOS.Sources.Lib.ARLib
+ARLib                       C     Sources.Lib.ARLib
 ARM3                        EXP   closed.RiscOS.Sources.HWSupport.ARM3
 AsmUtils                    ASM   Sources.Lib.AsmUtils
 BrowseHTMLLib               EXP   Sources.Lib.HTMLLib
@@ -58,6 +58,7 @@ PDebug                      C     Sources.Lib.PDebug
 PlainArgvLib                EXP   Sources.Lib.PlainArgv
 PRISMLib                    EXP   Sources.Lib.PRISMLib
 RemoteDebug                 C     Sources.Lib.remotedb
+ReplayLib                   C     Sources.Lib.ARLib.Replay
 RMVersion                   ASM   Sources.Programmer.RMVersion
 rpclib                      C     Sources.Lib.TCPIPLibs.rpclib.rpc
 SDIOLib                     C     Sources.Lib.SDIOLib
@@ -72,7 +73,6 @@ TCPIPheaders                C     Sources.Lib.TCPIPLibs.headers
 TGRLib                      EXP   closed.RiscOS.Sources.Lib.TGRlib
 ToolboxLib                  C     Sources.Toolbox.ToolboxLib
 Trace                       C     Sources.Lib.Trace
-Unicode                     RES   Sources.SystemRes.Unicode
 UnicodeLib                  C     Sources.Lib.UnicodeLib
 unixlib                     C     Sources.Lib.TCPIPLibs.unixlib
 UtilLib                     C     Sources.Lib.UtilLib
@@ -93,6 +93,7 @@ DDE                         RES   Sources.SystemRes.DDE
 DDETools                    RES   Library
 PrintDefs                   RES   Sources.Printing.PrintDefs
 SoundRes                    RES   closed.RiscOS.Sources.Audio.SoundRes
+Unicode                     RES   Sources.SystemRes.Unicode
 UserGuide                   RES   Sources.SystemRes.UserGuide
 WebCache                    RES   Sources.SystemRes.WebCache
 # Components inside SystemRes.STB.Baseline
@@ -157,6 +158,7 @@ HAL_Titanium                HAL   Sources.HAL.HAL_Titanium                      
 HAL_Tungsten                HAL   Sources.HAL.HAL_Tungsten                                              RISC_OS         Tungsten
 Kernel                      KERNEL Sources.Kernel                                                       RISC_OS         Kernel
 #--------------------------------------------------------------------------------------------------------------------------------------
+310Support                  C     Sources.Toolbox.310Support                                            Toolbox         ThreeTen
 AcornHTTP                   C     Sources.Networking.Fetchers.HTTP                                      Networking      AcornHTTP
 AcornLogo                   RES   Sources.Video.UserI.ScrSavers.AcornLogo                               ScrSavers       AcornLogo
 AcornLogoSetup              RES   Sources.Video.UserI.ScrSavers.AcornLogo.Settings                      ScrSavers       AcornLogoSetup
@@ -356,6 +358,7 @@ LDAP                        C     closed.RiscOS.Sources.Networking.Fetchers.LDAP
 LED                         C     closed.RiscOS.Sources.HWSupport.LED                                   HWSupport       LED
 LoadWimp                    RES   Sources.SystemRes.LoadWimp                                            RISC_OS         LoadWimp
 LocaleRes                   RES   closed.RiscOS.Sources.SystemRes.STB.Utilities.LocaleRes               SystemRes       LocaleRes
+MakeInstrument              ASM   Sources.Audio.MIDI.MakeIns                                            Audio           MakeIns
 MakePSFont                  C     Sources.Printing.Modules.MakePSFont                                   Printing        MakePSFont
 MatrixKey                   C     closed.RiscOS.Sources.HWSupport.Input.MatrixKey                       HWSupport       MatrixKey
 MatrixKeyboard              C     closed.RiscOS.Sources.HWSupport.Input.MatrixKey                       HWSupport       MatrixKey
@@ -368,13 +371,12 @@ MessagesData                DATA  Sources.Internat.Messages                     
 MessagesHigh                ASM   Sources.Internat.Messages                                             Internat        MessagesHI
 MessageTrans                ASM   Sources.Internat.MsgTrans                                             Internat        MsgTrans
 MIDI4                       ASM   closed.RiscOS.Sources.Audio.MIDI.MIDI4                                Audio           MIDI4
-MIDIPlayer                  ASM   Sources.Audio.MIDIPlay                                                Audio           MPlay
+MIDIPlayer                  ASM   Sources.Audio.MIDI.MIDIPlay                                           Audio           MPlay
 MIDISynthesiser             ASM   closed.RiscOS.Sources.Audio.MIDI.Synth                                Audio           Synth
 MimeMap                     C     Sources.Networking.MimeMap                                            Networking      MimeMap
 MManager                    ASM   Sources.Networking.AUN.MManagerBlob                                   Networking      MManager
 ModeFiles                   ASM   closed.RiscOS.Sources.Video.UserI.ModeFiles                           Video           ModeFiles
 Mouse                       ASM   Sources.HWSupport.Mouse                                               HWSupport       Mouse
-MPlay                       ASM   closed.RiscOS.Sources.Audio.MIDI.Mplay                                Audio           MPlay
 msadpcm                     ASM   closed.RiscOS.Sources.Audio.msadpcm                                   Audio           msadpcm
 MultiMedia                  ASM   closed.RiscOS.Sources.Apps.MultiMedia                                 Apps            MultiMedia
 MUSBDriver                  C     Sources.HWSupport.USB.Controllers.MUSBDriver                          USB             MUSBDriver
@@ -799,6 +801,7 @@ Madness                     BAS   Sources.Apps.Diversions.Madness               
 Maestro                     BAS   Sources.Apps.Maestro                                                  Apps            Maestro
 MaestroFiles                RES   Sources.Apps.Maestro
 MailMan                     BAS   Sources.Networking.AUN.Apps.MailMan                                   Utilities       MailMan
+MakeInstrumentApp           BAS   Sources.Apps.MakeInsApp                                               Apps            MakeIns
 MakeModes                   C     Sources.Apps.MakeModes                                                Apps            MakeModes
 MchConfig                   C     closed.RiscOS.Sources.SystemRes.MchConfig                             SystemRes       MchConfig
 MemNow                      BAS   Sources.Apps.Diversions.MemNow                                        Apps            MemNow
