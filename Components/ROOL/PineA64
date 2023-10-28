@@ -26,6 +26,7 @@ HdrSrc                -type EXP
 # change the type to EXP
 #
 CompressPNG           -type EXP
+DDEUtils              -type EXP
 Econet                -type EXP
 GPIO                  -type EXP
 HostFS                -type EXP
@@ -85,10 +86,10 @@ IIC
 International
 InternationalKeyboard -options KEYBOARD=All
 ITable
-#NetFS
-#NetFiler
-#NetPrint
-#NetStatus
+NetFS
+NetFiler
+NetPrint
+NetStatus
 Obey
 Pinboard
 PipeFS
@@ -123,9 +124,8 @@ Filer_Action
 DOSFS                 -options PCMCIA=TRUE
 SCSISwitch
 SCSISoftUSB
-SCSIFS                -options ASFLAGS="-PD \"PartitionManager SETL {TRUE}\""
+SCSIFS
 SCSIFiler             -options ASFLAGS="-PD \"SCSI SETL {TRUE}\"" TEMPLATES=yes
-Partman
 SDIODriver
 SDFS
 SDFSFiler             -options ASFLAGS="-PD \"SDFS SETL {TRUE}\"" TEMPLATES=yes
@@ -184,9 +184,6 @@ CDFSFiler
 
 UnSqzAIF
 InetRes               -options TYPE=EmergencyUtils
-DDEUtils
-NFS
-ZeroPain
 
 # some libraries and bits
 #
@@ -210,7 +207,6 @@ Wild
 Trace
 DebugLib
 SyncLib
-rpclib
 SDIOLib
 SMHCLib
 
