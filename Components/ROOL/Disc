@@ -344,6 +344,7 @@ SparkCab                -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!Spar
 SparkCPIO               -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
 SparkLzh                -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
 SparkPackdDir           -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
+SparkMcStuffit          -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
 SparkSpark              -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
 SparkTar                -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules
 SparkZip                -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.!SparkFS.Modules

@@ -574,6 +574,7 @@ SparkCab                    C     Sources.FileSys.ImageFS.SparkFS.Codecs.SparkCa
 SparkCPIO                   C     Sources.FileSys.ImageFS.SparkFS.Codecs.SparkCPIO                      FileSys         SparkCPIO
 SparkLzh                    C     Sources.FileSys.ImageFS.SparkFS.Codecs.SparkLzh                       FileSys         SparkLzh
 SparkPackdDir               C     Sources.FileSys.ImageFS.SparkFS.Codecs.SparkPackdDir                  FileSys         SparkPackdDir
+SparkMcStuffit              C     Sources.FileSys.ImageFS.SparkFS.Codecs.SparkMcStuffit                 FileSys         SparkMcStuffit
 SparkSpark                  C     Sources.FileSys.ImageFS.SparkFS.Codecs.SparkSpark                     FileSys         SparkSpark
 SparkTar                    C     Sources.FileSys.ImageFS.SparkFS.Codecs.SparkTar                       FileSys         SparkTar
 SparkZip                    C     Sources.FileSys.ImageFS.SparkFS.Codecs.SparkZip                       FileSys         SparkZip
