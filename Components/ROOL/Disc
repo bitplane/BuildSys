@@ -126,9 +126,17 @@ callx                   -type EXP       # Lib.callx
 zlib                    -type EXP       # Lib.zlib
 PRISMLib                -type EXP       # Lib.PRISMLib
 SparkLib                -type EXP       # Lib.SparkLib
-SyncLib                 -type EXP       # Lib.SyncLib
+
+#
+# These libraries aren't required by a Disc build, but the Continuous Integration
+# system reuses the Exports from this product currently, so we export them here
+# to allow softload phases on GitLab...
+#
+ARLib                   -type EXP       # Lib.ARLib
+ReplayLib               -type EXP       # Lib.ARLib
 SDIOLib                 -type EXP       # Lib.SDIOLib
 SMHCLib                 -type EXP       # Lib.SMHCLib
+SyncLib                 -type EXP       # Lib.SyncLib
 
 #
 # Other header and library exports for the Universal build...

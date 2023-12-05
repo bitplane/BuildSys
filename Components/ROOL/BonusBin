@@ -78,6 +78,7 @@ SharedCLibrary          -type EXP
 #
 # Libraries...
 #
+ARLib                   -type EXP
 AsmUtils                -type EXP
 TCPIPheaders            -type EXP
 socklib                 -type EXP
@@ -90,6 +91,7 @@ DeskLib                 -type EXP
 ModMallocLib            -type EXP
 PlainArgvLib            -type EXP
 RemoteDebug             -type EXP
+ReplayLib               -type EXP
 PDebug                  -type EXP
 DDTLib                  -type EXP
 Wild                    -type EXP
