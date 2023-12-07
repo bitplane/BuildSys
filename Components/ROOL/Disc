@@ -369,9 +369,6 @@ AccessPlus              -options INSTDIR=<Install$Dir>.HardDisc4.Utilities.Acces
 # Not working installed components...
 #
 ###ARMovie                 -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources
-###AREncode                -options INSTDIR=<Install$Dir>.HardDisc4.Utilities
-###ARPlayer                -options INSTDIR=<Install$Dir>.HardDisc4.Apps
-###ARWork                  -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources
 ###PhotoView               -options INSTDIR=<Install$Dir>.HardDisc4.Utilities
 ###ICAClient               -options INSTDIR=<Install$Dir>.HardDisc4.Apps
 ###PhotoCDMod              -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.Resources.!System.350.Modules

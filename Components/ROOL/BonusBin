@@ -122,6 +122,10 @@ MakeInstrument          -options INSTDIR=<Install$Dir>.BonusBin.Apps.!MakeIns.Mo
 RealTime                -options INSTDIR=<Install$Dir>.BonusBin.Apps
 RSound                  -options INSTDIR=<Install$Dir>.BonusBin.Apps.!RealTime.Modules
 Clock                   -options INSTDIR=<Install$Dir>.BonusBin.Diversions
+AREncode                -options INSTDIR=<Install$Dir>.BonusBin.Apps.Replay
+ARPlayer                -options INSTDIR=<Install$Dir>.BonusBin.Apps.Replay
+ReplaySpt               -options INSTDIR=<Install$Dir>.BonusBin.Apps.Replay.!ARPlayer
+ARWork                  -options INSTDIR=<Install$Dir>.BonusBin.Apps.Replay
 
 #
 # Bonus modules

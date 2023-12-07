@@ -489,7 +489,7 @@ RCMMDriver                  C     closed.RiscOS.Sources.HWSupport.RCMMDriver    
 Reboot                      RES   closed.RiscOS.Sources.SystemRes.STB.Utilities.Reboot                  SystemRes       Reboot
 RedrawManager               C     Sources.Desktop.RedrawMgr                                             Desktop         RedrawMgr
 RemotePrinterSupport        C     Sources.Printing.Modules.RemPrnSpt                                    Printing        RemPrnSpt
-ReplaySpt                   C     closed.RiscOS.Sources.Audio.ReplaySpt                                 Audio           ReplaySpt
+ReplaySpt                   C     Sources.Audio.ReplaySpt                                               Audio           ReplaySpt
 ResCreate                   C     Sources.Apps.Toolbox.ResCreate                                        Apps            ResCreate
 ResDisplay                  C     Sources.Toolbox.ResDisplay                                            Toolbox         ResDisplay
 ResEd                       C     Sources.Apps.Toolbox.ResEd                                            Apps            ResEd
@@ -752,10 +752,10 @@ WimpUtils                   ASM   Sources.SystemRes.DesktopBoot.Source.WimpUtils
 AccessPlus                  C     Sources.Networking.AUN.Apps.AccessPlus                                Utilities       Access+
 Alarm                       BAS   Sources.Apps.Alarm                                                    Apps            Alarm
 Allocate                    C     Sources.Utilities.Allocate                                            Utilities       Allocate
-AREncode                    C     closed.RiscOS.Sources.Apps.AREncode                                   Apps            AREncode
+AREncode                    C     Sources.Apps.AREncode                                                 Apps            AREncode
 ARMovie                     RES   closed.RiscOS.Sources.SystemRes.ARMovie                               SystemRes       ARMovie
-ARPlayer                    C     closed.RiscOS.Sources.Apps.ARPlayer                                   Apps            ARPlayer
-ARWork                      RES   closed.RiscOS.Sources.Apps.ARWork                                     Apps            ARWork
+ARPlayer                    C     Sources.Apps.ARPlayer                                                 Apps            ARPlayer
+ARWork                      RES   Sources.Apps.ARWork                                                   Apps            ARWork
 BorderUtils                 ASM   Sources.Utilities.Patches.BorderUtils                                 SystemRes       BorderUtil
 Blocks                      BAS   Sources.Apps.Diversions.Blocks                                        Apps            Blocks
 Calibrate                   RES   closed.RiscOS.Sources.Utilities.Calibrate                             Utilities       Calibrate

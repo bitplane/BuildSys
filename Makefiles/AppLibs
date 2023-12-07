@@ -57,7 +57,7 @@ NET4LIBS  = ${UNIXLIB} ${INETLIB} ${SOCK4LIB}
 NET5LIBS  = ${UNIXLIB} ${INETLIB} ${SOCK5LIB} 
 
 ABCLIB    = C:ABCLib.o.ABCLib
-ARLIBS    = C:ARLib.o.ARIntLib C:ARLib.o.ReplayLib
+ARLIBS    = C:ARLib.o.ReplayLib C:ARLib.o.ARIntLib
 CALLXLIB  = _!_x_!_
 CONLIB    = C:ConfigLib.o.ConfigLib
 DDTLIB    = C:DDTLib.o.DDTLib
