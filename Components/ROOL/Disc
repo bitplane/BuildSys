@@ -56,6 +56,7 @@ MakePSFont              -type EXP       # Printing.Modules.MakePSFont    <- also
 MimeMap                 -type EXP       # Networking.MimeMap
 MessageTrans            -type EXP       # Internat.MsgTrans
 NetPrint                -type EXP       # FileSys.NetPrint
+NVMeFS                  -type EXP       # FileSys.NVMeFS.NVMeFS
 ParallelDeviceDriver    -type EXP       # HWSupport.Parallel
 PCI                     -type EXP       # HWSupport.PCI       
 PDriver                 -type EXP       # Printing.Modules.PDriver       <- also included as installed component

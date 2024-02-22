@@ -409,6 +409,9 @@ NHTwitter                   ASM   closed.RiscOS.Sources.Video.Render.NHTwitter  
 NoAltBreak                  RES   closed.RiscOS.Sources.SystemRes.STB.Utilities.NoAltBreak              SystemRes       NoAltBreak
 Norway                      ASM   Sources.Internat.Territory.TerritoryModule                            Internat        Norway
 NVidia                      C     Sources.Video.HWSupport.NVidia                                        Video           NVidia
+NVMeFS                      C     Sources.FileSys.NVMeFS.NVMeFS                                         FileSys         NVMeFS
+NVMeFiler                   ASM   Sources.FileSys.ADFS.ADFSFiler                                        FileSys         NVMeFiler
+NVMeDriver                  C     Sources.HWSupport.NVMe.NVMeDriver                                     HWSupport       NVMeDriver
 NVRAM                       C     Sources.HWSupport.NVRAM                                               HWSupport       NVRAM
 Obey                        C     Sources.Programmer.Obey                                               Programmer      Obey
 OHCIDriver                  C     Sources.HWSupport.USB.Controllers.OHCIDriver                          USB             OHCIDriver
