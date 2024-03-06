@@ -47,7 +47,6 @@ HostFS                  -type EXP       # Programmer.HostFS
 Hourglass               -type EXP       # Video.Render.Hourglass
 IIC                     -type EXP       # HWSupport.IIC
 Joystick                -type EXP       # HWSupport.Joystick
-KeyWatch                -type EXP       # Programmer.KeyWatch
 MakePSFont              -type EXP       # Printing.Modules.MakePSFont
 MessageTrans            -type EXP       # Internat.MsgTrans
 ParallelDeviceDriver    -type EXP       # HWSupport.Parallel
