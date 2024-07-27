@@ -1,21 +1,21 @@
-/* (7.99)
+/* (8.00)
  *
  * This file is automatically maintained by srccommit, do not edit manually.
  *
  */
-#define Module_MajorVersion_CMHG        7.99
+#define Module_MajorVersion_CMHG        8.00
 #define Module_MinorVersion_CMHG
-#define Module_Date_CMHG                23 Mar 2024
+#define Module_Date_CMHG                27 Jul 2024
 
-#define Module_MajorVersion             "7.99"
-#define Module_Version                  799
+#define Module_MajorVersion             "8.00"
+#define Module_Version                  800
 #define Module_MinorVersion             ""
-#define Module_Date                     "23 Mar 2024"
+#define Module_Date                     "27 Jul 2024"
 
-#define Module_ApplicationDate          "23-Mar-24"
+#define Module_ApplicationDate          "27-Jul-24"
 
 #define Module_ComponentName            "BuildSys"
 
-#define Module_FullVersion              "7.99"
-#define Module_HelpVersion              "7.99 (23 Mar 2024)"
-#define Module_LibraryVersionInfo       "7:99"
+#define Module_FullVersion              "8.00"
+#define Module_HelpVersion              "8.00 (27 Jul 2024)"
+#define Module_LibraryVersionInfo       "8:0"

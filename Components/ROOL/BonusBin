@@ -132,6 +132,7 @@ ARWork                  -options INSTDIR=<Install$Dir>.BonusBin.Apps.Replay
 #
 DebugTools              -options INSTDIR=<Install$Dir>.BonusBin.Modules.Developer
 DebugButtn              -options INSTDIR=<Install$Dir>.BonusBin.Modules.Developer
+MemAlloc                -options INSTDIR=<Install$Dir>.BonusBin.Modules.Developer
 ZeroPain                -options INSTDIR=<Install$Dir>.BonusBin.Modules.Developer
 
 #

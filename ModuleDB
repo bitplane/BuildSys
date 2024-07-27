@@ -362,6 +362,7 @@ MakeInstrument              ASM   Sources.Audio.MIDI.MakeIns                    
 MakePSFont                  C     Sources.Printing.Modules.MakePSFont                                   Printing        MakePSFont
 MatrixKey                   C     closed.RiscOS.Sources.HWSupport.Input.MatrixKey                       HWSupport       MatrixKey
 MatrixKeyboard              C     closed.RiscOS.Sources.HWSupport.Input.MatrixKey                       HWSupport       MatrixKey
+MemAlloc                    ASM   Sources.Programmer.MemAlloc                                           Programmer      MemAlloc
 MemInfo                     C     Sources.Programmer.MemInfo                                            Programmer      MemInfo
 MemSpeed                    ASM   closed.RiscOS.Sources.SystemRes.STB.Utilities.MemSpeed                SystemRes       MemSpeed
 Menu                        C     Sources.Toolbox.Menu                                                  Toolbox         Menu

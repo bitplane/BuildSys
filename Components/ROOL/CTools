@@ -105,7 +105,6 @@ UtilLib                 -options INSTDIR=Install:DDE.AcornC/C++.Export.<APCS>.Li
 # Targets - DevSystem
 #
 System                  -options INSTDIR=Install:DDE.AcornC/C++.Developer USERIF=None
-AUNMsgs                 -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules.Network SYSTEM=PlingSystem
 BorderUtils             -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules
 CallASWI                -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules MACHINE=Archimedes
 SharedCLibrary          -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules INSTTYPE= SCL_APCS="-APCS 3/26bit"
