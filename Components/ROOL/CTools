@@ -105,7 +105,8 @@ UtilLib                 -options INSTDIR=Install:DDE.AcornC/C++.Export.<APCS>.Li
 # Targets - DevSystem
 #
 System                  -options INSTDIR=Install:DDE.AcornC/C++.Developer USERIF=None
-BorderUtils             -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules
+310Support              -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules.310Support
+BorderUtils             -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules MACHINE=Archimedes
 CallASWI                -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules MACHINE=Archimedes
 SharedCLibrary          -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules INSTTYPE= SCL_APCS="-APCS 3/26bit"
 DDEUtils                -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules
@@ -136,8 +137,10 @@ PrintDbox               -options INSTDIR=Install:DDE.AcornC/C++.Developer.!Syste
 ProgInfo                -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules.Toolbox
 SaveAs                  -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules.Toolbox
 Scale                   -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules.Toolbox
+Tabs                    -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules.Toolbox
 ToolAction              -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules.Toolbox
 Toolbox                 -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules.Toolbox
+TreeView                -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules.Toolbox
 Window                  -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.310.Modules.Toolbox
 ddt                     -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.350.Modules INSTTYPE=tool
 FPEmulator              -options INSTDIR=Install:DDE.AcornC/C++.Developer.!System.350.Modules MACHINE=IOMD FPE_APCS=3/26bit
@@ -176,7 +179,10 @@ xpand                   -options INSTDIR=Install:DDE.AcornC/C++.!SetPaths.Lib32 
 #
 SharedCLibrary          -options INSTDIR=Install:DDE.AcornC/C++.EndUser.!System.310.Modules SCL_APCS="-APCS 3/26bit"
 SharedCLibrary          -options INSTDIR=Install:DDE.AcornC/C++.EndUser.!System.500.Modules
+310Support              -options INSTDIR=Install:DDE.AcornC/C++.EndUser.!System.310.Modules.310Support
+BorderUtils             -options INSTDIR=Install:DDE.AcornC/C++.EndUser.!System.310.Modules MACHINE=Archimedes
 CallASWI                -options INSTDIR=Install:DDE.AcornC/C++.EndUser.!System.310.Modules MACHINE=Archimedes
+DragASprite             -options INSTDIR=Install:DDE.AcornC/C++.EndUser.!System.310.Modules
 FPEmulator              -options INSTDIR=Install:DDE.AcornC/C++.EndUser.!System.310.Modules MACHINE=Archimedes FPE_APCS=3/26bit
 FPEmulator              -options INSTDIR=Install:DDE.AcornC/C++.EndUser.!System.350.Modules MACHINE=IOMD FPE_APCS=3/26bit
 FPEmulator              -options INSTDIR=Install:DDE.AcornC/C++.EndUser.!System.400.Modules MACHINE=All32 FPE_APCS=3/32bit
@@ -193,8 +199,10 @@ PrintDbox               -options INSTDIR=Install:DDE.AcornC/C++.EndUser.!System.
 ProgInfo                -options INSTDIR=Install:DDE.AcornC/C++.EndUser.!System.310.Modules.Toolbox
 SaveAs                  -options INSTDIR=Install:DDE.AcornC/C++.EndUser.!System.310.Modules.Toolbox
 Scale                   -options INSTDIR=Install:DDE.AcornC/C++.EndUser.!System.310.Modules.Toolbox
+Tabs                    -options INSTDIR=Install:DDE.AcornC/C++.EndUser.!System.310.Modules.Toolbox
 ToolAction              -options INSTDIR=Install:DDE.AcornC/C++.EndUser.!System.310.Modules.Toolbox
 Toolbox                 -options INSTDIR=Install:DDE.AcornC/C++.EndUser.!System.310.Modules.Toolbox
+TreeView                -options INSTDIR=Install:DDE.AcornC/C++.EndUser.!System.310.Modules.Toolbox
 Window                  -options INSTDIR=Install:DDE.AcornC/C++.EndUser.!System.310.Modules.Toolbox
 
 #
