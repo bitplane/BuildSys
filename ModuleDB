@@ -792,7 +792,7 @@ Connector                   C     Sources.Utilities.Connector                   
 CreateSEC                   BAS   Sources.Utilities.CreateSEC                                           Utilities       CreateSEC
 Diversions                  RES   Sources.Apps.Diversions.Diversions                                    Apps            Diversions
 Flasher                     BAS   Sources.Apps.Diversions.Flasher                                       Apps            Flasher
-FontMerge                   C     Sources.SystemRes.Configure                                           SystemRes       FontMerge
+FontMerge                   C     Sources.SystemRes.FontMerge                                           SystemRes       FontMerge
 FontPrint                   C     Sources.Printing.FontPrint                                            Printing        FontPrint
 Fonts                       RES   Sources.SystemRes.Fonts                                               SystemRes       Fonts
 FormEd                      BAS   Sources.Apps.FormEd                                                   Tools           FormEd
@@ -853,8 +853,7 @@ Verify                      RES   closed.RiscOS.Sources.Utilities.Verify        
 ABRelease                   RES   Utilities.Autobuild.ABRelease                                         Autobuild       ABRelease
 #--------------------------------------------------------------------------------------------------------------------------------------
 #
-# NOTE: These are the ancilliary parts of the build tree, we need to use the parent directory
-#       specifier to get at the correct directories.
+# These are the ancilliary parts of the build tree.
 #
 #--------------------------------------------------------------------------------------------------------------------------------------
 # Component                 Type  Source directory                                                      Inst dir        Module filename
