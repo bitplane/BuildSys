@@ -62,7 +62,6 @@ PCI                     -type EXP       # HWSupport.PCI
 PDriver                 -type EXP       # Printing.Modules.PDriver       <- also included as installed component
 PDriverDP               -type EXP       # Printing.Modules.PDModules     <- also included as installed component
 PDumperLJ               -type EXP       # Printing.PDumpers.PDumperLJ    <- also included as installed component
-PDumperSpt              -type EXP       # Printing.Modules.PDumperSpt    <- also included as installed component
 Podule                  -type EXP       # HWSupport.Podule
 PortableHAL             -type EXP       # HWSupport.PortableHAL
 RamFS                   -type EXP       # FileSys.RAMFS.RAMFS
