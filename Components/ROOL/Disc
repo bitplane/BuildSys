@@ -64,7 +64,7 @@ PDriverDP               -type EXP       # Printing.Modules.PDModules     <- also
 PDumperLJ               -type EXP       # Printing.PDumpers.PDumperLJ    <- also included as installed component
 PDumperSpt              -type EXP       # Printing.Modules.PDumperSpt    <- also included as installed component
 Podule                  -type EXP       # HWSupport.Podule
-Portable                -type EXP       # HWSupport.Portable
+PortableHAL             -type EXP       # HWSupport.PortableHAL
 RamFS                   -type EXP       # FileSys.RAMFS.RAMFS
 RemotePrinterSupport    -type EXP       # Printing.Modules.RemPrnSpt
 ResourceFS              -type EXP       # FileSys.ResourceFS.ResourceFS

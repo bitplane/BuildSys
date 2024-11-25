@@ -53,7 +53,7 @@ MessageTrans            -type EXP
 ParallelDeviceDriver    -type EXP       
 PDriver                 -type EXP
 Podule                  -type EXP       
-Portable                -type EXP       
+PortableHAL             -type EXP       
 ADFS                    -type EXP # After FileCore to allow FileCoreErr generation
 RamFS                   -type EXP       
 ResourceFS              -type EXP       
