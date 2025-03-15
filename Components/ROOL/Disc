@@ -290,7 +290,7 @@ CloseUp                 -options INSTDIR=<Install$Dir>.HardDisc4.Apps
 Draw                    -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO350Hook.Apps
 Edit                    -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO350Hook.Apps
 Help                    -options INSTDIR=<Install$Dir>.HardDisc4.!Boot.RO350Hook.Apps ROMTOKENS=350
-Maestro                 -options INSTDIR=<Install$Dir>.HardDisc4.Apps TARGET=Maestro
+Maestro                 -options INSTDIR=<Install$Dir>.HardDisc4.Apps
 OmniApp                 -options INSTDIR=<Install$Dir>.HardDisc4.Apps
 LanManFS                -options INSTDIR=<Install$Dir>.HardDisc4.Apps.!Omni.RMStore OPTIONS=-DCHECK_ARMBOOT_EXISTS ROMSPRITES=FALSE
 NFS                     -options INSTDIR=<Install$Dir>.HardDisc4.Apps.!Omni.RMStore
@@ -337,7 +337,7 @@ RemotePrinterSupport    -options INSTDIR=<Install$Dir>.HardDisc4.Printing.!Print
 Public                  -options INSTDIR=<Install$Dir>.HardDisc4.Public
 
 # Documents
-MaestroFiles            -options INSTDIR=<Install$Dir>.HardDisc4.Documents.Music.Maestro TARGET=Examples
+MaestroFiles            -options INSTDIR=<Install$Dir>.HardDisc4.Documents.Music.Maestro INSTTYPE=examples
 UserGuide               -options INSTDIR=<Install$Dir>.HardDisc4.Documents.UserGuide
 
 # Utilities
