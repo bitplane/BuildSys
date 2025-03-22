@@ -357,7 +357,7 @@ LanManFS                    C     Sources.Networking.Omni.Protocols.OmniLanManFS
 LDAP                        C     closed.RiscOS.Sources.Networking.Fetchers.LDAP                        Networking      LDAP
 LED                         C     closed.RiscOS.Sources.HWSupport.LED                                   HWSupport       LED
 LoadWimp                    RES   Sources.SystemRes.LoadWimp                                            RISC_OS         LoadWimp
-LocaleRes                   RES   closed.RiscOS.Sources.SystemRes.STB.Utilities.LocaleRes               SystemRes       LocaleRes
+LocaleRes                   RES   Sources.SystemRes.LocaleRes                                           SystemRes       LocaleRes
 MakeInstrument              ASM   Sources.Audio.MIDI.MakeIns                                            Audio           MakeIns
 MakePSFont                  C     Sources.Printing.Modules.MakePSFont                                   Printing        MakePSFont
 MatrixKey                   C     closed.RiscOS.Sources.HWSupport.Input.MatrixKey                       HWSupport       MatrixKey
