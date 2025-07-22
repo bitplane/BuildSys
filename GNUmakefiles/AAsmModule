@@ -272,7 +272,7 @@ debug: debug_${CUSTOMSA}
 debug_: ${DBG_MODULE}
 	@${ECHO} ${COMPONENT}: standalone debug module built
 
-${DBG_MODULE}: ${DBG_OBJECT} ${DBG_LIBS} ${DIRS} ${SA_DEPEND}
+${DBG_MODULE}: ${SA_DEPEND} ${DIRS} ${DBG_LIBS} ${DBG_OBJECT} 
 ifeq (GNU,${TOOLCHAIN})
 	${LDBIN} $@ ${DBG_OBJECT} ${DBG_LIBS}
 else
