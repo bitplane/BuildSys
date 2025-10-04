@@ -1,21 +1,21 @@
-/* (8.04)
+/* (8.05)
  *
  * This file is automatically maintained by srccommit, do not edit manually.
  *
  */
-#define Module_MajorVersion_CMHG        8.04
+#define Module_MajorVersion_CMHG        8.05
 #define Module_MinorVersion_CMHG
-#define Module_Date_CMHG                22 Mar 2025
+#define Module_Date_CMHG                08 Oct 2025
 
-#define Module_MajorVersion             "8.04"
-#define Module_Version                  804
+#define Module_MajorVersion             "8.05"
+#define Module_Version                  805
 #define Module_MinorVersion             ""
-#define Module_Date                     "22 Mar 2025"
+#define Module_Date                     "08 Oct 2025"
 
-#define Module_ApplicationDate          "22-Mar-25"
+#define Module_ApplicationDate          "08-Oct-25"
 
 #define Module_ComponentName            "BuildSys"
 
-#define Module_FullVersion              "8.04"
-#define Module_HelpVersion              "8.04 (22 Mar 2025)"
-#define Module_LibraryVersionInfo       "8:4"
+#define Module_FullVersion              "8.05"
+#define Module_HelpVersion              "8.05 (08 Oct 2025)"
+#define Module_LibraryVersionInfo       "8:5"

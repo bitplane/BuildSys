@@ -310,7 +310,8 @@ FrontPanel                  C     closed.RiscOS.Sources.HWSupport.FrontPanel    
 FSLock                      ASM   Sources.FileSys.FSLock                                                FileSys         FSLock
 FTP                         C     Sources.Networking.Fetchers.FTP                                       Networking      FTP
 Gadgets                     C     Sources.Toolbox.Gadgets                                               Toolbox         TextGadget
-GameModes                   ASM   Sources.Video.UserI.GameModes2                                        Video           GameModes2
+GameModes                   ASM   Sources.Video.UserI.GameModes                                         Video           GameModes
+GameModes2                  ASM   Sources.Video.UserI.GameModes2                                        Video           GameModes2
 GC320Video                  ASM   Sources.Video.HWSupport.GC320VideoBlob                                Video           GC320Video
 GenericFetcher              C     Sources.Networking.Fetchers.GenericFetcher                            Networking      Generic
 Germany                     ASM   Sources.Internat.Territory.TerritoryModule                            Internat        Germany
