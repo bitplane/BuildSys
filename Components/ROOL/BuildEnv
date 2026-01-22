@@ -52,8 +52,7 @@ MessageTrans            -type EXP       # Internat.MsgTrans
 ParallelDeviceDriver    -type EXP       # HWSupport.Parallel
 PCI                     -type EXP       # HWSupport.PCI
 PDriver                 -type EXP       # Printing.Modules.PDriver
-PDriverDP               -type EXP       # Printing.Modules.PDModules
-PDumperLJ               -type EXP       # Printing.PDumpers.PDumperLJ
+PDumperHdrs             -type EXP       # Printing.PDumpers
 Podule                  -type EXP       # HWSupport.Podule
 Portable75              -type EXP       # HWSupport.Portable75
 PortManager             -type EXP       # HWSupport.PortMan

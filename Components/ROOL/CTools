@@ -49,7 +49,7 @@ IIC                     -type EXP
 Joystick                -type EXP
 ParallelDeviceDriver    -type EXP
 PCI                     -type EXP
-PDumperLJ               -type EXP
+PDumperHdrs             -type EXP
 Podule                  -type EXP
 PortableHAL             -type EXP
 RamFS                   -type EXP

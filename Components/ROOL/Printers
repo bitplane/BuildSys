@@ -15,6 +15,7 @@ Econet                  -type EXP
 ParallelDeviceDriver    -type EXP
 NetPrint                -type EXP
 PDriver                 -type EXP
+PDumperHdrs             -type EXP
 MakePSFont              -type EXP
 RemotePrinterSupport    -type EXP
 
