@@ -110,7 +110,7 @@ INCLUDED_CMODULE = YES
 # WIPE + WFLAGS    (recursive delete)
 # RM               (non-recursive delete)
 # AS + ASFLAGS     (assembler)
-# LD + LDFLAGS     (linker; LDDFLAGS also used in debug builds; -d implicit)
+# LD + LDFLAGS     (linker; LDDFLAGS not used in debug builds as a module header can't describe a debug area)
 # LDRAMFLAGS       (more linker flags)
 # LDROMFLAGS       (more linker flags)
 # LDLINKFLAGS      (flags for the rom_link phase)
@@ -139,7 +139,7 @@ INCLUDED_CMODULE = YES
 # It relies on the following from the DbgRules makefile
 #
 #
-# CDFLAGS  C++DFLAGS  ASDFLAGS  LDDFLAGS
+# CDFLAGS  C++DFLAGS  ASDFLAGS
 # .c.od  .c++.od  .cpp.od  .s.od
 #
 #
@@ -242,7 +242,7 @@ ifeq ("${INCLUDED_MODULELIBS}","")
 include ModuleLibs
 endif
 
-CFLAGS       := -zM -zps1 ${CFLAGS}
+CFLAGS       := ${C_MODULE} ${C_NO_STKCHK} ${CFLAGS}
 
 ifeq ("${INCLUDED_MODSTDRULE}","")
 include ModStdRule
@@ -489,7 +489,7 @@ rm.${SA_TARGET}: ${SA_OBJS_} ${SA_LIBS} ${DIRS} ${SA_DEPEND}
         ${CHMOD} -R a+rx rm
 
 rm.${DBG_TARGET}: ${DBG_OBJS_} ${DBG_LIBS} ${SA_LIBS} ${DIRS} ${SA_DEPEND}
-        ${LD} ${LDFLAGS} ${LDRAMFLAGS} -o $@ -rmf ${DBG_OBJS_} ${DBG_LIBS} ${SA_LIBS}
+        ${LD} ${LDFLAGS} ${LDRAMFLAGS} -rescan -o $@ -rmf ${DBG_OBJS_} ${DBG_LIBS} ${SA_LIBS}
         ${CHMOD} -R a+rx rm
 
 gpa.${GPA_TARGET}: aif.${AIF_TARGET}
