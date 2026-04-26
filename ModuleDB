@@ -38,6 +38,7 @@ ImageLibJPEG                C     Sources.Lib.ImageLib.JPEG
 ImageLibPNG                 C     Sources.Lib.ImageLib.PNG
 inetlib                     C     Sources.Lib.TCPIPLibs.inetlib
 JSLib                       C     Sources.Lib.JSLib
+KDFLib                      C     Sources.Lib.KDFLib
 LDAPheaders                 EXP   closed.RiscOS.Sources.Networking.LDAP.include
 liblber                     C     closed.RiscOS.Sources.Networking.LDAP.liblber
 libldap                     C     closed.RiscOS.Sources.Networking.LDAP.libldap
@@ -68,6 +69,7 @@ ShareD                      EXP   Sources.Networking.AUN.Access.ShareFSBlob.Shar
 SMHCLib                     C     Sources.Lib.SMHCLib
 socklib                     C     Sources.Lib.TCPIPLibs.socklib
 SparkLib                    C     Sources.Lib.SparkLib
+SPNEGOLib                   C     Sources.Lib.SPNEGOLib
 SSLeay                      EXP   closed.RiscOS.Sources.Lib.SSLeay
 SSLRO                       EXP   closed.RiscOS.Sources.Networking.libs.SSLRO
 SyncLib                     EXP   Sources.Lib.SyncLib

@@ -51,7 +51,9 @@ XOLIB     = TCPIPLibs:o.xolibzm
 RPCLIB    = TCPIPLibs:rpc.o.rpc_datazm TCPIPLibs:rpc.o.rpclibzm
 RPC5LIB   = TCPIPLibs:rpc.o.rpc_datazm TCPIPLibs:rpc.o.rpclib5zm
 CRYPTLIB  = C:SSLeay.o.ssl C:SSLeay.o.libcrypto
+KDFLIB    = C:KDFLib.o.KDFLibzm
 MBEDTLSLIB = C:mbedTLS.o.mbedTLSzm
+SPNEGOLIB = C:SPNEGOLib.o.SPNEGOLibzm
 
 NET4LIBS  = ${UNIXLIB} ${INETLIB} ${SOCK4LIB} 
 NET5LIBS  = ${UNIXLIB} ${INETLIB} ${SOCK5LIB} 

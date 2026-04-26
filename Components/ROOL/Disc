@@ -98,6 +98,8 @@ socklib                 -type EXP       # Lib.TCPIPLibs.socklib
 unixlib                 -type EXP       # Lib.TCPIPLibs.unixlib
 xolib                   -type EXP       # Lib.TCPIPLibs.xolib
 mbedTLS                 -type EXP       # Lib.mbedTLS
+KDFLib                  -type EXP       # Lib.KDFLib
+SPNEGOLib               -type EXP       # Lib.SPNEGOLib
 
 #
 # Toolbox libraries...

@@ -41,7 +41,9 @@ XOLIB     = ${LIBDIR}/TCPIPLibs/xolibzm.a
 RPCLIB    = ${LIBDIR}/TCPIPLibs/rpc/rpc_datazm.o ${LIBDIR}/TCPIPLibs/rpc/rpclibzm.a
 RPC5LIB   = ${LIBDIR}/TCPIPLibs/rpc/rpc_datazm.o ${LIBDIR}/TCPIPLibs/rpc/rpclib5zm.a
 CRYPTLIB  = ${LIBDIR}/SSLeay/ssl.a ${LIBDIR}/SSLeay/libcrypto.a
+KDFLIB    = ${LIBDIR}/KDFLib/KDFLibzm.a
 MBEDTLSLIB = ${LIBDIR}/mbedTLS/mbedTLSzm.a
+SPNEGOLIB = ${LIBDIR}/SPNEGOLib/SPNEGOLibzm.a
 
 NET4LIBS  = ${UNIXLIB} ${INETLIB} ${SOCK4LIB} 
 NET5LIBS  = ${UNIXLIB} ${INETLIB} ${SOCK5LIB} 
