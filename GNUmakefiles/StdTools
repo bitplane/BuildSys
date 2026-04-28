@@ -18,6 +18,7 @@ SUFFIX_TEMPLATE = ,fec
 SUFFIX_OBEY     = ,feb
 SUFFIX_DEBIMAGE = ,fd3
 SUFFIX_SQUASH   = ,fca
+SUFFIX_DRAWFILE = ,aff
 endif
 SUFFIX_PERL     = ,102
 SUFFIX_HEADER   = .h
@@ -64,6 +65,7 @@ LDBIN           = armlink -bin -o
 STRIP           = @echo > /dev/null
 endif
 
+AOFTOC          = aoftoc
 BASCRUNCH       = toffb --crunch
 BINAOF          = binaof
 CAT             = cat
