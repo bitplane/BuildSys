@@ -421,7 +421,6 @@ NVMeDriver                  C     Sources.HWSupport.NVMe.NVMeDriver             
 NVRAM                       C     Sources.HWSupport.NVRAM                                               HWSupport       NVRAM
 Obey                        C     Sources.Programmer.Obey                                               Programmer      Obey
 OHCIDriver                  C     Sources.HWSupport.USB.Controllers.OHCIDriver                          USB             OHCIDriver
-OHCIEmulator                C     mixed.RiscOS.Sources.HWSupport.USB.Prototypes.OHCIEmulator            USB             OHCIEm
 OMAPHDMI                    ASM   Sources.Video.HWSupport.OMAPHDMIBlob                                  Video           OMAPHDMI
 OMAPVideo                   C     Sources.Video.HWSupport.OMAPVideo                                     Video           OMAPVideo
 OMAP4Video                  C     Sources.Video.HWSupport.OMAP4Video                                    Video           OMAP4Video
@@ -485,9 +484,12 @@ PrinterManager              C     Sources.Printing.PrinterManager               
 PrintTool                   C     Sources.Printing.Manager.util.PrintTool                               Printing        PrintTool
 ProgInfo                    C     Sources.Toolbox.ProgInfo                                              Toolbox         ProgInfo
 ProgressUI                  C     closed.RiscOS.Sources.Video.UserI.ProgressUI                          Video           ProgressUI
+PrototypeOHCI               C     Sources.HWSupport.USB.Prototypes.ProtoOHCI                            USB             ProtoOHCI
 PrototypeUSBComb            C     Sources.HWSupport.USB.Prototypes.ProtoUComb                           USB             ProtoUComb
+PrototypeUSBHub             RES   Sources.HWSupport.USB.Prototypes.ProtoUHub                            USB             ProtoUHub
 PrototypeUSBKey             C     Sources.HWSupport.USB.Prototypes.ProtoUKey                            USB             ProtoUKey
 PrototypeUSBMouse           C     Sources.HWSupport.USB.Prototypes.ProtoUMouse                          USB             ProtoUMouse
+PrototypeUSBPrint           C     Sources.HWSupport.USB.Prototypes.ProtoUPrint                          USB             ProtoUPrint
 PS2Driver                   ASM   Sources.HWSupport.PS2Driver                                           HWSupport       PS2Driver
 PsychoEffects               ASM   Sources.Video.Render.PsychoEffects                                    Video           PsychoEffects
 Rain                        BAS   Sources.Video.UserI.ScrSavers.Rain                                    ThirdParty      !Rain
@@ -614,7 +616,7 @@ TaskManager                 ASM   Sources.Desktop.Switcher                      
 TaskModule                  C     closed.RiscOS.Sources.Desktop.TaskModule                              Desktop         TaskModule
 TaskWindow                  ASM   Sources.Desktop.TaskWindow                                            Desktop         TaskWindow
 tboxlib                     C     Sources.Toolbox.tboxlib                                               Toolbox
-TerritoryManager            ASM   Sources.Internat.Territory.TerritoryManager                           Internat        TerrMgr
+TerritoryManager            C     Sources.Internat.Territory.TerritoryManager                           Internat        TerrMgr
 TFTP                        C     closed.RiscOS.Sources.Networking.TFTP                                 Networking      TFTP
 TFTPserver                  C     closed.RiscOS.Sources.Networking.TFTPserver                           Networking      TFTPserver
 TinyStubs                   C     Sources.Toolbox.TinyStubs                                             Toolbox         TinyStubs

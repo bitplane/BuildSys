@@ -34,22 +34,23 @@ SCSIDriver            -type EXP
 PCCardFS              -type EXP
 PDriver               -type EXP
 
-# kernel is first module in ROM seen as the UtilityModule
+# Kernel is first module in ROM seen as the UtilityModule
 HAL_iMx6
 Kernel                -at 0xFC018000 -options ASFLAGS="-PD \"CMOS_Override SETS \\\"= FileLangCMOS,fsnumber_SCSIFS,SCSIFSDrivesCMOS,&20\\\"\""
 Podule                -type EXP
 PCI
+SharedRISC_OSLib
 FileSwitch
 ResourceFS
-TerritoryManager
 Messages
 MessageTrans
+TerritoryManager
+# First 8 modules cannot be unplugged
 UK
 WindowManager         -options OPTIONS=Ursula
-TaskManager
 # Desktop is the 11th module (default language)
 Desktop
-SharedRISC_OSLib
+TaskManager
 ScreenModes
 IMXVideo
 BASIC105

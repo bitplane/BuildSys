@@ -37,17 +37,18 @@ HAL_Titanium
 Kernel                -at 0xFC010000
 Podule                -type EXP
 PCI
+SharedRISC_OSLib
 FileSwitch
 ResourceFS
-TerritoryManager
 Messages
 MessageTrans
+TerritoryManager
+# First 8 modules cannot be unplugged
 UK
 WindowManager         -options OPTIONS=Ursula
-TaskManager
 # Desktop is the 11th module (default language)
 Desktop
-SharedRISC_OSLib
+TaskManager
 ScreenModes
 GC320Video
 BASIC105

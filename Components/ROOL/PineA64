@@ -41,17 +41,18 @@ HAL_PineA64
 Kernel                -at 0xFC020000 -options ASFLAGS="-PD \"CMOS_Override SETS \\\"= FileLangCMOS,fsnumber_SDFS,CDROMFSCMOS,&C0,StartCMOS,&54\\\"\""
 Podule                -type EXP
 PCI
+SharedRISC_OSLib
 FileSwitch
 ResourceFS
-TerritoryManager
 Messages
 MessageTrans
+TerritoryManager
+# First 8 modules cannot be unplugged
 UK
 WindowManager         -options OPTIONS=Ursula
-TaskManager
 # Desktop is the 11th module (default language)
 Desktop
-SharedRISC_OSLib
+TaskManager
 ScreenModes
 PineVideo
 BASIC105

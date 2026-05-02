@@ -35,25 +35,25 @@ PDriver               -type EXP
 Portable              -type EXP
 VFPSupport            -type EXP
 
-# kernel is first module in ROM seen as the UtilityModule
+# Kernel is first module in ROM seen as the UtilityModule
 HAL_Tungsten
-Kernel                -at 0xFC010000
+Kernel                -at 0xFC010000 -options ASFLAGS="-PD \"CMOS_Override SETS \\\"= LanguageCMOS,12\\\"\""
 Podule
 PCI
+SharedRISC_OSLib
 FileSwitch
 ResourceFS
-TerritoryManager
 Messages
 MessageTrans
+# First 8 modules cannot be unplugged
+TerritoryManager
 UK
 WindowManager         -options OPTIONS=Ursula
-# Desktop is the 11th module (default language)
+# Desktop is the 12th module (default language)
 Desktop
-SharedRISC_OSLib
+TaskManager
 ScreenModes
 NVidia                
-TaskManager
-ADFSFiler
 BASIC105
 BASIC64
 BlendTable
@@ -73,6 +73,7 @@ DrawMod
 BBCEconet
 FileCore
 ADFS
+ADFSFiler
 RamFS
 Filer
 FilerSWIs

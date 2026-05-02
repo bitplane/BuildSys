@@ -42,17 +42,18 @@ VFPSupport            -type EXP
 HAL_IOMD
 Kernel                -at 0xFC008000
 Podule
+SharedRISC_OSLib
 FileSwitch
 ResourceFS
-TerritoryManager
 Messages
 MessageTrans
+TerritoryManager
+# First 8 modules cannot be unplugged
 UK
 WindowManager         -options OPTIONS=Ursula
-TaskManager
 # Desktop is the 11th module (default language)
 Desktop
-SharedRISC_OSLib
+TaskManager
 ScreenModes
 VIDC20Video
 Mouse
