@@ -149,7 +149,7 @@ ${TARGET}: ${SRCS_} ${DIRS}
 ifneq (${TARGET},${SRCS})
         ${FAPPEND} bas.${TARGET} ${SRCS_}
 endif
-ifneq (,${SQUISH})
+ifneq (no,${SQUISHED})
         ${BASCRUNCH} -1 bas.${TARGET} crunched.${TARGET}
         ${SQUISH} ${SQUISHFLAGS} -from crunched.${TARGET} -to $@
 else

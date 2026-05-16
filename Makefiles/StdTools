@@ -17,13 +17,8 @@
 INCLUDED_STDTOOLS = YES
 
 #
-# $Id$
-#
-#
 # These are the tool definitions for RISC OS hosted builds.
 #
-#
-STDMAKEKFILE=$Id$
 
 #
 # Core toolset.
@@ -141,6 +136,7 @@ C_NOWARN_FUNCCAST := -We
 C_NOWARN_NARROWING_CAST := -Wn
 C_NOWARN_NON_ANSI_INCLUDES := -Wp
 C_NOWARN_UNDEF_HASHIF := -Wz
+C_NOWARN_UNUSED_PARAMETER := -Ww
 
 #
 # Recursive forced copying options.

@@ -160,7 +160,7 @@ ${TARGET}${SUFFIX_BASIC}: ${DIRS} ${SRCS_}
 ifneq (${TARGET},${SRCS})
 	${FAPPEND} ${TARGET}.bas ${SRCS_}
 endif
-ifneq (,${SQUISH})
+ifneq (no,${SQUISHED})
 	${BASCRUNCH} -1 ${TARGET}.bas ${TARGET}.crunched
 	${SQUISH} ${SQUISHFLAGS} -from ${TARGET}.crunched -to $@
 else
