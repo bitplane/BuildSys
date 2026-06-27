@@ -132,11 +132,13 @@ SparkLib                -type EXP       # Lib.SparkLib
 # system reuses the Exports from this product currently, so we export them here
 # to allow softload phases on GitLab...
 #
+International           -type EXP       # Internat.Inter
 SATADriver              -type EXP       # HWSupport.ATA.SATADriver
 SDIODriver              -type EXP       # HWSupport.SD.SDIODriver
 NVMeDriver              -type EXP       # HWSupport.NVMe.NVMeDriver
 ARLib                   -type EXP       # Lib.ARLib
 ReplayLib               -type EXP       # Lib.ARLib
+CLXLite                 -type EXP       # Lib.CLXLite
 SDIOLib                 -type EXP       # Lib.SDIOLib
 SMHCLib                 -type EXP       # Lib.SMHCLib
 SyncLib                 -type EXP       # Lib.SyncLib
