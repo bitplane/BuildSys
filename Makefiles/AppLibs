@@ -87,6 +87,7 @@ TRACELIB  = C:Trace.o.Trace
 UNICODELIB = C:Unicode.o.ucode
 WILDLIB   = C:Wild.o.Wild
 ZLIB      = C:zlib.o.zlib
+ZULIB     = C:zlib.o.zlibu
 
 DEBUGLIB  = C:DebugLib.o.DebugLib
 DEBUGLIBS = ${DEBUGLIB} ${REMOTEDBLIB} ${INETLIB} ${SOCK5LIB} ${TRACELIB} ${PDEBUGLIB} ${MODMALLOCLIB} ${WILDLIB} ${DDTLIB} ${DESKLIB}

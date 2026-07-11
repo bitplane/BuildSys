@@ -78,6 +78,7 @@ TRACELIB  = ${LIBDIR}/Trace/Tracezm.a
 UNICODELIB = ${LIBDIR}/Unicode/ucodezm.a
 WILDLIB   = ${LIBDIR}/Wild/Wildzm.a
 ZLIB      = ${LIBDIR}/zlib/zlibzm.a
+ZULIB     = _!_x_!_
 
 DEBUGLIB  = ${LIBDIR}/DebugLib/DebugLibZM.a
 DEBUGLIBS = ${DEBUGLIB} ${REMOTEDBLIB} ${INETLIB} ${SOCK5LIB} ${TRACELIB} ${PDEBUGLIB} ${MODMALLOCLIB} ${WILDLIB} ${DDTLIB} ${DESKLIB}
