@@ -70,6 +70,7 @@ SMHCLib                     C     Sources.Lib.SMHCLib
 socklib                     C     Sources.Lib.TCPIPLibs.socklib
 SparkLib                    C     Sources.Lib.SparkLib
 SPNEGOLib                   C     Sources.Lib.SPNEGOLib
+SRHeapLib                   C     Sources.Lib.SRHeapLib
 SSLeay                      EXP   closed.RiscOS.Sources.Lib.SSLeay
 SSLRO                       EXP   closed.RiscOS.Sources.Networking.libs.SSLRO
 SyncLib                     EXP   Sources.Lib.SyncLib

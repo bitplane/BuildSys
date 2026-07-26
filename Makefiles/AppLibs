@@ -81,6 +81,7 @@ PNGWOLIB  = C:ImageLib.o.libpng-wo
 PRISMLIB  = C:PRISMLib.o.PRISMLib
 REMOTEDBLIB = C:remotedb.o.remotedb
 RMVSN     = C:RMVersion.o.RMVersion
+SRHEAPLIB = C:SRHeapLib.o.SRHeapLib
 SYNCLIB   = C:SyncLib.o.SyncLib
 TGRLIB    = C:TGRLib.o.tgrlib
 TRACELIB  = C:Trace.o.Trace

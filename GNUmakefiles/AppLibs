@@ -73,6 +73,7 @@ PNGWOLIB  = ${LIBDIR}/ImageLib/libpng-wo.a
 PRISMLIB  = ${LIBDIR}/PRISMLib/PRISMLib.a
 REMOTEDBLIB = ${LIBDIR}/remotedb/remotedb.a
 RMVSN     = ${LIBDIR}/RMVersion/RMVersion.a
+SRHEAPLIB = ${LIBDIR}/SRHeapLib/SRHeapLib.a
 SYNCLIB   = ${LIBDIR}/SyncLib/SyncLib.a
 TGRLIB    = ${LIBDIR}/TGRLib/tgrlib.a
 TRACELIB  = ${LIBDIR}/Trace/Trace.a

@@ -72,6 +72,7 @@ RMVSN     = ${LIBDIR}/RMVersion/RMVersionZ.a
 SDIOLIB   = ${LIBDIR}/SDIOLib/SDIOLib.a
 SMHCLIB   = ${LIBDIR}/SMHCLib/SMHCLib.a
 SPARKLIB  = ${LIBDIR}/SparkLib/SparkLibzm.a
+SRHEAPLIB = ${LIBDIR}/SRHeapLib/SRHeapLibzm.a
 SYNCLIB   = ${LIBDIR}/SyncLib/SyncLibzm.a
 TGRLIB    = ${LIBDIR}/TGRLib/tgrlib.a
 TRACELIB  = ${LIBDIR}/Trace/Tracezm.a

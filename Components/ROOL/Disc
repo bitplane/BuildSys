@@ -156,6 +156,7 @@ ImageLib                -type EXP      # Lib.ImageLib
 RMVersion               -type EXP      # Programmer.RMVersion
 SoundControl            -type EXP      # Audio.SoundCtrl
 SpriteExtend            -type EXP      # Video.Render.SprExtend         <- also included as installed component
+SRHeapLib               -type EXP      # Lib.SRHeapLib
 USBDriver               -type EXP      # HWSupport.USB.USBDriver
 
 #

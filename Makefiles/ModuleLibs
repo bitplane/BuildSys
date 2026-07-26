@@ -82,6 +82,7 @@ RMVSN     = C:RMVersion.o.RMVersionZ
 SDIOLIB   = C:SDIOLib.o.SDIOLib
 SMHCLIB   = C:SMHCLib.o.SMHCLib
 SPARKLIB  = C:SparkLib.o.SparkLibzm
+SRHEAPLIB = C:SRHeapLib.o.SRHeapLibzm
 SYNCLIB   = C:SyncLib.o.SyncLibzm
 TGRLIB    = C:TGRLib.o.tgrlib
 TRACELIB  = C:Trace.o.Tracezm
