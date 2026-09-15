@@ -1,6 +1,7 @@
 # Makefile fragment for C and C++ modules
 
 INCLUDED_CMODULE = YES
+CMODULE_LDSCRIPT := $(dir $(abspath $(lastword ${MAKEFILE_LIST})))module.ld
 
 #
 # This makefile provides the following phony targets:
@@ -172,8 +173,15 @@ endif
 TOKHELPDEPENDS ?= ${OBJS}
 ROM_LIBS     ?= ${LIBS}
 SA_LIBS      ?= ${LIBS}
+ifeq (GNU,${TOOLCHAIN})
+CMHGFLAGS    += -zbase
+ROM_LIBS     += ${ROMCSTUBS} $(shell ${CC} -print-libgcc-file-name)
+ROM_SYMS      = ${LNK_TARGET}.rom-syms.ld
+ROM_SYM_FLAGS = -T ${ROM_SYMS}
+else
 ROM_LIBS     += ${ROMCSTUBS}
 ROM_SYMS      = ${C_ABSSYM}
+endif
 SA_LIBS      += ${CLIB}
 DBG_LIBS     += ${DEBUGLIBS}
 
@@ -305,7 +313,7 @@ create_exp_hdr_dirs:
 
 ifneq (${CMHGFILE},)
 ${CMHGAUTOHDR}_h_: ${DIRS} ${CMHGFILE}.h
-	${AWK} -- "/.ifndef ${CMHGFILE_SWIPREFIX}/,/endif/" ${CMHGFILE}.h > ${CMHGAUTOHDR}_h_
+	${AWK} -- "/SWI number definitions/,/Special error/" ${CMHGFILE}.h > ${CMHGAUTOHDR}_h_
 endif
 
 ifneq ($(findstring ${CMHGAUTOHDR},${HDRS}),)
@@ -314,8 +322,13 @@ ${CMHGAUTOHDR}.exphdr: ${CMHGAUTOHDR}_h_ ${CMHGAUTOHDR}.h
 endif
 
 ifneq ($(findstring ${CMHGAUTOHDR},${ASMCHDRS}),)
-${CMHGAUTOHDR}.expasmc: ${CMHGAUTOHDR}_h_ ${CMHGAUTOHDR}.hdr
+${CMHGAUTOHDR}.rawasmc: ${CMHGAUTOHDR}.hdr
 	${HDR2H} ${CMHGAUTOHDR}.hdr ${C_EXP_HDR}/${CMHGAUTOHDR}.h
+	${TOUCH} $@
+
+${CMHGFILE}.h: ${CMHGAUTOHDR}.rawasmc
+
+${CMHGAUTOHDR}.expasmc: ${CMHGAUTOHDR}.rawasmc ${CMHGAUTOHDR}_h_
 	${FAPPEND} ${C_EXP_HDR}/${CMHGAUTOHDR}.h ${C_EXP_HDR}/${CMHGAUTOHDR}.h ${CMHGAUTOHDR}_h_
 endif
 
@@ -429,11 +442,28 @@ rom_link_: ${LNK_TARGET}.linked
 	${CP} ${LNK_TARGET}_sym.linked ${LINKDIR}/${TARGET}_sym
 	@${ECHO} ${COMPONENT}: rom_link complete
 
+ifeq (GNU,${TOOLCHAIN})
+${ROM_SYMS}: ${C_ABSSYM}
+	awk '$$2 == "A" { print "PROVIDE(" $$3 " = " $$1 ");" }' $< > $@
+
+${ROM_TARGET}.aof: ${ROM_DEPEND} ${DIRS} ${ROM_OBJS_} ${ROM_LIBS}
+	${GNUTOOLPREFIX}ld -r -o $@ ${ROM_OBJS_} ${ROM_LIBS}
+
+${LNK_TARGET}.module.ld: ${CMODULE_LDSCRIPT}
+	sed 's/@MODULE_CODE_SECTION@/${TARGET}$$$$Code/g' $< > $@
+
+${LNK_TARGET}.linked: ${FORCEROMLINK} ${ROM_SYMS} ${ROM_TARGET}.aof ${LNK_TARGET}.module.ld
+	${GNUTOOLPREFIX}ld --ro-module-reloc ${ROM_SYM_FLAGS} -T ${LNK_TARGET}.module.ld --defsym=Module_LoadAddr=${ADDRESS} --defsym=Data_LoadAddr=0xFFF00000 \
+		-o $@.elf ${ROM_TARGET}.aof
+	${GNUTOOLPREFIX}objcopy -O binary $@.elf $@
+	${GNUTOOLPREFIX}nm -n $@.elf > ${LNK_TARGET}_sym.linked
+else
 ${ROM_TARGET}.aof: ${ROM_DEPEND} ${DIRS} ${ROM_OBJS_} ${ROM_LIBS}
 	${LD} -o $@ -aof ${ROM_OBJS_} ${ROM_LIBS}
 
 ${LNK_TARGET}.linked: ${FORCEROMLINK} ${ROM_SYMS} ${ROM_TARGET}.aof
 	${LD} ${LDFLAGS} ${LDLINKFLAGS} -o $@ -rmf -base ${ADDRESS} ${ROM_TARGET}.aof ${ROM_SYMS} -Symbols ${LNK_TARGET}_sym.linked
+endif
 
 #
 # Standalone rules

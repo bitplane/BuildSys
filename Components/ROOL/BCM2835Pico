@@ -34,7 +34,7 @@ PDriver               -type EXP
 
 # kernel is first module in ROM seen as the UtilityModule
 HAL_BCM2835
-Kernel                -at 0xFC010000 -options ASFLAGS="-PD \"CMOS_Override SETS \\\"= FileLangCMOS,fsnumber_SDFS,CDROMFSCMOS,&C0,LanguageCMOS,10\\\"\""
+Kernel                -at 0xFC010000 -options KERNEL_ADDRESS=0xFC010000 ASMDEFINES="-PD \"CMOS_Override SETS \\\"= FileLangCMOS,fsnumber_SDFS,CDROMFSCMOS,&C0,LanguageCMOS,10\\\"\""
 Podule                -type EXP
 PCI
 FileSwitch
@@ -63,7 +63,7 @@ DWCDriver
 VCHIQ
 BCMSound
 ScreenModes
-BCMVideo              -options ASFLAGS="-PD \"GenCmd SETL {FALSE}\""
+BCMVideo              -options ASMDEFINES="-PD \"GenCmd SETL {FALSE}\""
 DMAManager
 DrawMod               -type EXP
 FileCore

@@ -41,10 +41,11 @@ install_rom: ${TARGET}.linked
 	@${ECHO} ${COMPONENT}: HAL installed
 
 ${TARGET}.aof: ${ROM_OBJS_} ${ROM_LIBS} ${DIRS} ${ROM_DEPEND}
-	${LD} -o $@ -aof ${ROM_OBJS_} ${ROM_LIBS}
+	${GNUTOOLPREFIX}ld -r -o $@ ${ROM_OBJS_} ${ROM_LIBS}
 
 ${TARGET}.linked: ${TARGET}.aof
-	${LD} ${LDFLAGS} ${LDLINKFLAGS} -o $@ -bin -base 0xFC000000 ${TARGET}.aof
+	${GNUTOOLPREFIX}ld -Ttext=0xFC000000 -o $@.elf ${TARGET}.aof
+	${GNUTOOLPREFIX}objcopy -O binary $@.elf $@
 
 ${AIFDBG}: ${ROM_OBJS_} ${ROM_LIBS}
 	${MKDIR} aif
