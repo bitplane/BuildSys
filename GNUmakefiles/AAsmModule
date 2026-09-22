@@ -125,6 +125,8 @@ endif
 
 SOURCES_TO_SYMLINK += $(wildcard h/*) $(wildcard hdr/*) $(wildcard s/*) VersionNum VersionASM
 
+# Expose both source names for ObjAsm GET directives such as hdr.hashes.
+
 ifeq ("${INCLUDED_STDTOOLS}","")
 include StdTools
 endif
@@ -161,6 +163,12 @@ all debug export export_hdrs export_libs gpa_debug install install_rom rom_link 
 			linkbackpath=`echo $$linkdestdir | sed -e 's,[^/]\+,..,g'`; \
 			[ -d ${linksource} ] || [ -L $$linkdest ] || mkdir -p $$linkdestdir; \
 			[ -d ${linksource} ] || [ -L $$linkdest ] || ln -s $$linkbackpath/${linksource} $$linkdest; \
+			linksource=${linksource}; \
+			linkprefix=$${linksource%%/*}; \
+			if [ "$$linkprefix" = hdr ] || [ "$$linkprefix" = s ]; then \
+				linkalias=objs/`echo ${linksource} | sed 's,/,.,'`; \
+				[ -L $$linkalias ] || ln -s ../${linksource} $$linkalias; \
+			fi; \
 		 ) \
 	)
 	@[ -L objs/Resources ] || ln -s ../Resources objs/Resources
