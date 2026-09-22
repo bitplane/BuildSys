@@ -443,8 +443,10 @@ rom_link_: ${LNK_TARGET}.linked
 	@${ECHO} ${COMPONENT}: rom_link complete
 
 ifeq (GNU,${TOOLCHAIN})
+# GCCSDK's SCL maps its GNU va_list entry point to the ROM's vsnprintf.
 ${ROM_SYMS}: ${C_ABSSYM}
 	awk '$$2 == "A" { print "PROVIDE(" $$3 " = " $$1 ");" }' $< > $@
+	@echo 'PROVIDE(__gcc_vsnprintf = vsnprintf);' >> $@
 
 ${ROM_TARGET}.aof: ${ROM_DEPEND} ${DIRS} ${ROM_OBJS_} ${ROM_LIBS}
 	${GNUTOOLPREFIX}ld -r -o $@ ${ROM_OBJS_} ${ROM_LIBS}
