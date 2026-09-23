@@ -17,7 +17,12 @@ SECTIONS
   "Stub$$Init" : { *("Stub$$Init") }
   "Stub$$InitEnd" : { *("Stub$$InitEnd") }
   "C$$data" : { *("C$$data") }
-  "Stub$$Data" : { *("Stub$$Data") }
+  "Stub$$Data" :
+  {
+    *("Stub$$Data")
+    /* The GNU CLib has data after the legacy stub reservation. */
+    . += SharedCLib_GNUDataEnd - SharedCLib_GNUDataStart;
+  }
   "RTSK$$Data" : { *("RTSK$$Data") }
   .data :
   {
