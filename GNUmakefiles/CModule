@@ -499,8 +499,14 @@ gpa_debug_: ${GPA_TARGET}.gpa
 prepro: ${DIRS} ${PP_OBJS_}
 	@${ECHO} ${COMPONENT}: sources preprocessed
 
+ifeq (GNU,${TOOLCHAIN})
+SA_LINK_FORMAT = ${C_MODULE}
+else
+SA_LINK_FORMAT = -rmf
+endif
+
 ${SA_TARGET}${SUFFIX_MODULE}: ${SA_DEPEND} ${DIRS} ${SA_OBJS_} ${SA_LIBS}
-	${LD} ${LDFLAGS} ${LDRAMFLAGS} -o $@ -rmf ${SA_OBJS_} ${SA_LIBS}
+	${LD} ${LDFLAGS} ${LDRAMFLAGS} ${SA_LINK_FORMAT} -o $@ ${SA_OBJS_} ${SA_LIBS}
 	${MODSQZ} ${MODSQZFLAGS} $@
 
 ${DBG_TARGET}${SUFFIX_MODULE}: ${SA_DEPEND} ${DIRS} ${DBG_OBJS_} ${SA_LIBS} ${DBG_LIBS}
