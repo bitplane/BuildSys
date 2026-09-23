@@ -9,7 +9,13 @@ SECTIONS
   {
     KEEP(*("@MODULE_CODE_SECTION@"))
   }
-  .text : { *(.text .text.*) }
+  .text : { *(.text .text.*) *("C$$code") *("RW$$Code") }
+  .riscos.libscl.chunkstub :
+  {
+    KEEP(*(.riscos.libscl.chunkstub.start))
+    KEEP(*(SORT_BY_NAME(.riscos.libscl.chunkstub.id*)))
+    KEEP(*(.riscos.libscl.chunkstub.end))
+  }
   .rodata : { *(.rodata .rodata.*) }
   "Lib$$Init" : { *("Lib$$Init") }
   "Stub$$Code" : { *("Stub$$Code") }
@@ -17,7 +23,11 @@ SECTIONS
   "Stub$$Init" : { *("Stub$$Init") }
   "Stub$$InitEnd" : { *("Stub$$InitEnd") }
   "C$$data" : { *("C$$data") }
-  "Stub$$Data" : { *("Stub$$Data") }
+  "Stub$$Data" :
+  {
+    *("Stub$$Data")
+    . += SharedCLib_GNUDataEnd - SharedCLib_GNUDataStart;
+  }
   "RTSK$$Data" : { *("RTSK$$Data") }
   .data :
   {
